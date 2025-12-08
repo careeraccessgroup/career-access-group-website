@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import "tailwindcss";
+
+
+@theme{
+
+
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* font family */
+    --font-family-primary: 'Montserrat', sans-serif;
+  /* Primary Colors: Light Mode */
+  --color-primarycolor-100: #085770;
+  --color-primarycolor-200: #085A74;
+  --color-primarycolor-300: #03222C;
+  /* Hover */
+  --color-hovercolor-100: #064556;
+
+  /* Text Colors */
+  --color-textcolor-100: #2B2E33;
+  --color-textcolor-200: #6B7280;
+  --color-textcolor-300: #FFFFFF;
+
+  /* Background colors */
+    --color-bgcolor-100: #FFFFFF;
+    --color-bgcolor-200: #F8F9FB;
+    --color-bgcolor-300: #F0FCFF;
+
+    /* Button color */
+    --color-buttoncolor-100: #085770;
+    --color-buttoncolor-200: #00BFFF;
+    /* Borders */
+    --color-bordercolor-100: #E0E4E9;
+    --color-bordercolor-200: #CED2D8;
+    --color-bordercolor-300: #D9DDE2;
+
+    /* Success error warning */
+    --color-successcolor-100: #22C55E;
+    --color-errorcolor-100: #EF4444;
+    --color-warningcolor-100: #F59E0B;
+
+
+}
+
+/* Set Montserrat as the default font */
+body {
+    font-family: var(--font-family-primary);
+}
