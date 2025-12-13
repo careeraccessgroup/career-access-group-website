@@ -26,6 +26,9 @@
     --color-primary-hover-100: #16507A;
     --color-primary-hover-200: #326BBF;
 
+    /* Primary color with 70% opacity for overlays */
+    --color-primary-dark-70: rgba(26,79,138,0.7);
+
 
     /* ------------------------------------ */
     /* SECONDARY COLORS (Oranges)            */
@@ -76,4 +79,41 @@
 /* Set Montserrat as the default font */
 body {
     font-family: var(--font-family-primary);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-4 {
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+    opacity: 0;
 }
