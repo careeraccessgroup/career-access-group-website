@@ -22,10 +22,12 @@ const Navbar = () => {
           <Link to="/about" className="hover:text-secondary-orange transition-colors">About</Link>
           <Link to="/partnerships" className="hover:text-secondary-orange transition-colors">Partnership</Link>
           <Link to="/gallery" className="hover:text-secondary-orange transition-colors">Gallery</Link>
-          <Link to="/contact" className="hover:text-secondary-orange transition-colors">Contact</Link>
+          {/* <Link to="/contact" className="hover:text-secondary-orange transition-colors">Contact</Link> */}
+          <Link to="/partnerships">
           <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-4 lg:px-6 py-2 rounded-full text-white font-medium transition-colors text-sm lg:text-base">
             Partner With Us
           </Button>
+          </Link>
         </div>
 
         {/* mobile toggle */}

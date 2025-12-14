@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Team = () => {
   const teamMembers = [
@@ -42,9 +42,16 @@ const Team = () => {
       name: 'Alex Kumar',
       role: 'Head of Marketing',
       description: 'Marketing strategist specializing in career services and professional development.',
-      image: '/CAA Profile photo/394A0573.jpg'
+      image: '/CAA Profile photo/394A0571.jpg'
     }
   ]
+
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 0)
+    return () => clearTimeout(t)
+  }, [])
 
   return (
     <section className="py-20 bg-bgcolor-200">
@@ -59,12 +66,16 @@ const Team = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <div key={member.id} className="bg-white rounded-lg p-8 shadow-lg text-center">
+          {teamMembers.map((member, idx) => (
+            <div
+              key={member.id}
+              className={`bg-white rounded-lg p-8 shadow-lg text-center transform transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              style={{ transitionDelay: mounted ? `${idx * 80}ms` : '0ms' }}
+            >
               <img 
                 src={member.image} 
                 alt={member.name}
-                className="w-24 h-24 rounded-full object-cover mx-auto mb-6"
+                className="w-24 h-24 rounded-full object-cover mx-auto mb-6 ring-2 ring-primary-medium/20 transition-transform duration-500 ease-out hover:scale-105"
               />
               <h3 className="text-xl font-bold text-textcolor-100 mb-2">{member.name}</h3>
               <h4 className="text-primary-medium font-semibold mb-4">{member.role}</h4>

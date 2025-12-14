@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import OptimizedImage from '../components/common/OptimizedImage'
+import { updateMetaTags, pageMetadata } from '../utils/seo'
 
 const Gallery = () => {
+  useEffect(() => {
+    updateMetaTags(pageMetadata.gallery)
+  }, [])
+
   const galleryImages = [
     { id: 1, title: 'Training Session', category: 'Programs', image: '/0V0A1479.jpg' },
     { id: 2, title: 'Career Fair', category: 'Events', image: '/0V0A1486.jpg' },
@@ -34,7 +40,7 @@ const Gallery = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map(img => (
               <div key={img.id} className="relative rounded-lg overflow-hidden shadow-lg group">
-                <img 
+                <OptimizedImage 
                   src={img.image} 
                   alt={img.title}
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"

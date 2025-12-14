@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://careeraccessgroup.com/sitemap.xml

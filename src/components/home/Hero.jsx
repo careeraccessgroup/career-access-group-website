@@ -6,12 +6,16 @@ const Hero = () => (
     className="
     relative min-h-screen flex items-center
     bg-no-repeat bg-center
-    bg-contain md:bg-cover
+    bg-contain md:bg-cover hero-bg
   "
-    style={{ backgroundImage: `url('/0V0A1760.jpg')`,backgroundSize: "110% auto", }}
+    style={{ 
+      backgroundImage: `url('/0V0A1760.jpg')`,
+      backgroundSize: "110% auto",
+      willChange: 'transform'
+    }}
   >
     {/* <div className="absolute inset-0  bg-opacity-70"></div> */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1A4F8A]/70 to-[#1A4F8A]/40"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-primary-dark/70 to-primary-dark/40"></div>
 
     <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-white">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up">
