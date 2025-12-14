@@ -1,11 +1,12 @@
 import React from 'react'
 import { CheckCircle, Rocket, Briefcase, ArrowRight,Compass } from 'lucide-react'
-import teamImage from '../../assets/0V0A2042.jpg'
+
 import { FaCompass,FaRocket,FaBriefcase } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Introduction = () => (
   <section className="py-20 bg-bgcolor-200">
-    <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-6xl mx-auto px-6">
       {/* Welcome Header */}
       <div className="text-center mb-16">
         <h2 className="text-2xl md:text-5xl font-bold text-textcolor-100 mb-4">
@@ -26,12 +27,12 @@ const Introduction = () => (
           <p className="text-textcolor-200 mb-4 leading-relaxed text-base">
             Our mission is simple yet powerful: to unlock the potential of Africa's next generation and create pathways to meaningful, sustainable careers that drive both individual success and continental progress.
           </p>
-          <button className="text-primary-medium font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+          <Link to={"/about"} className="text-primary-medium font-semibold flex items-center gap-2 hover:gap-3 transition-all">
             Learn More About Us <ArrowRight size={16} />
-          </button>
+          </Link>
         </div>
         <div className="animate-fade-in-up-delay-1">
-          <img src={teamImage} alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
+          <img src="/0V0A2042.jpg" alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
         </div>
       </div>
 
