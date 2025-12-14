@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="w-full bg-primary-dark text-white px-4 sm:px-6 py-4 border-b border-primary-medium shadow-md ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
-          <img src="/logo.png" alt="Career Access Group Logo" className="h-6 w-6 sm:h-8 sm:w-8 rounded-full" />
+          <img src="/logo.svg" alt="Career Access Group Logo" className="h-6 w-6 sm:h-8 sm:w-8 rounded-full" />
           <Link to="/" className="text-lg sm:text-xl font-bold">Career Access Group</Link>
         </div>
 

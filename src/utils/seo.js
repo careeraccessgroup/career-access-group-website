@@ -79,7 +79,7 @@ export const structuredData = {
   name: 'Career Access Group',
   description: 'Empowering African youth through career education and professional development',
   url: 'https://careeraccessgroup.com',
-  logo: 'https://careeraccessgroup.com/logo.png',
+  logo: 'https://careeraccessgroup.com/logo.svg',
   sameAs: [
     'https://linkedin.com/company/career-access-group',
     'https://twitter.com/careeraccessgrp'

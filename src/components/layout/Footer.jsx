@@ -9,7 +9,7 @@ const Footer = () => (
         {/* Company Info */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/logo.png" alt="Career Access Group Logo" className="h-8 w-8 rounded-full" />
+            <img src="/logo.svg" alt="Career Access Group Logo" className="h-8 w-8 rounded-full" />
             <span className="text-xl font-bold">Career Access Group</span>
           </div>
           <p className="text-gray-300 mb-6 leading-relaxed">
