@@ -18,6 +18,7 @@
     /* PRIMARY COLORS (Blues)                */
     /* ------------------------------------ */
 
+    --color-primary-darker:#0F172A; /* Very Dark Blue */
     --color-primary-dark: #1A4F8A;     /* Deep Blue */
     --color-primary-medium: #3B7DD8;   /* Medium Blue */
     --color-primary-light: #6FA3DC;    /* Light Blue */
@@ -25,6 +26,9 @@
     /* Hover variations (optional) */
     --color-primary-hover-100: #16507A;
     --color-primary-hover-200: #326BBF;
+
+    /* Primary color with 70% opacity for overlays */
+    --color-primary-dark-70: rgba(26,79,138,0.7);
 
 
     /* ------------------------------------ */
@@ -76,4 +80,148 @@
 /* Set Montserrat as the default font */
 body {
     font-family: var(--font-family-primary);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy;
+    transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform;
+    transition: transform 0.3s ease;
+}
+
+/* Optimize background images */
+[style*="background-image"] {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+    .text-4xl { font-size: 2rem; }
+    .text-5xl { font-size: 2.5rem; }
+    .text-6xl { font-size: 3rem; }
+    .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+    .px-6 { padding-left: 1rem; padding-right: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .text-4xl { font-size: 1.75rem; }
+    .text-5xl { font-size: 2rem; }
+    .text-6xl { font-size: 2.25rem; }
+    .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+    .px-6 { padding-left: 0.75rem; padding-right: 0.75rem; }
+}
+
+/* Animation keyframes with hardware acceleration */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Animation classes with hardware acceleration */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+.animate-fade-in-up-delay-1 {
+    animation: fadeInUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+.animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+.animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+.animate-fade-in-up-delay-4 {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+}
+
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+/* Optimize hover effects */
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) translateZ(0);
+}
+
+/* Optimize transitions */
+.transition-transform {
+    will-change: transform;
+}
+
+.transition-opacity {
+    will-change: opacity;
+}
+
+/* Optimize all transitions */
+.transition-all {
+    will-change: transform, opacity;
+}
+
+/* Preload critical images */
+.hero-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Optimize scrolling performance */
+body {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+/* Reduce layout shifts */
+.animate-fade-in-up,
+.animate-fade-in-up-delay-1,
+.animate-fade-in-up-delay-2,
+.animate-fade-in-up-delay-3,
+.animate-fade-in-up-delay-4 {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Optimize image containers */
+.relative {
+    contain: layout style paint;
+}
+
+/* Prevent unnecessary repaints */
+.shadow-lg {
+    will-change: box-shadow;
 }
