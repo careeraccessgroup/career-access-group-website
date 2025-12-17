@@ -71,7 +71,7 @@ const Partnerships = () => {
       {/* Hero Section */}
       <section className="py-20 bg-primary-dark text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Partner With Us.</h1>
+          <h1 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Partner With Us</h1>
           <p className={`text-xl mb-8 max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '120ms' : '0ms' }}>
             Shape the Future of African Talent – Partner With Us Today!
           </p>
@@ -85,8 +85,8 @@ const Partnerships = () => {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl font-bold text-textcolor-100 mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Why Partner With Us?</h2>
-            <p className={`text-textcolor-200 text-lg max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
+            <h2 className={`text-3xl font-bold text-textcolor-100 mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Why Partner With Us?</h2>
+            <p className={`text-textcolor-200 text-md max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
               Join us in creating transformative opportunities that benefit your organization while making a lasting impact on African youth development.
             </p>
           </div>
@@ -111,8 +111,8 @@ const Partnerships = () => {
       <section className="py-20 bg-bgcolor-200">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl font-bold text-textcolor-100 mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Partnership Opportunities</h2>
-            <p className={`text-textcolor-200 text-lg max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
+            <h2 className={`text-3xl font-bold text-textcolor-100 mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>Partnership Opportunities</h2>
+            <p className={`text-textcolor-200 text-md max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
               We welcome diverse partnership models designed to create mutual value and lasting impact across various sectors.
             </p>
           </div>
@@ -164,6 +164,7 @@ const Partnerships = () => {
               <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto mb-6">
                 <FaHeart className="text-2xl text-accent-teal" size={34}  />
               </div>
+              <h3 className="text-xl font-bold text-textcolor-100 mb-4">Foundations & Philanthropists</h3>
               <p className="text-textcolor-200">
                 Impact-driven funders and foundations supporting education and career development initiatives.
               </p>

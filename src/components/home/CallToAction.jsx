@@ -14,16 +14,17 @@ const CallToAction = () => {
           </div>
         </div>
         
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up-delay-1">
-          Shape the Future of African Talent
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in-up-delay-1">
+          Call To Action
         </h2>
         
-        <p className="text-white text-lg max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up-delay-2">
+
+        <p className="text-white text-md max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up-delay-2">
           Partner with us today and be part of a movement that's transforming lives, building careers, and driving Africa's economic future.
         </p>
         
         <Link to="/partnerships">
-        <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 animate-fade-in-up-delay-3 flex items-center gap-2 mx-auto mb-6">
+        <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-4 rounded-full text-white font-semibold text-md transition-all duration-300 animate-fade-in-up-delay-3 flex items-center gap-2 mx-auto mb-6">
           <Calendar size={20} />
           Schedule a Partnership Discussion
         </Button>

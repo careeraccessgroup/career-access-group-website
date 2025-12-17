@@ -15,12 +15,12 @@ const Values = () => {
 
   return (
     <section className="py-20 bg-primary-light">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className={`text-4xl md:text-5xl font-bold text-white mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+          <h2 className={`text-2xl md:text-3xl font-bold text-white mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
             Our Core Values
           </h2>
-          <p className={`text-white text-lg transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
+          <p className={`text-white text-md transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
             The principles that guide everything we do
           </p>
         </div>

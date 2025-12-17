@@ -9,10 +9,10 @@ const Footer = () => (
         {/* Company Info */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/logo.svg" alt="Career Access Group Logo" className="h-8 w-8 rounded-full" />
-            <span className="text-xl font-bold">Career Access Group</span>
+            <img src="/logo.svg" alt="Career Access Group Logo" className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-cover rounded-full drop-shadow-lg" />
+            <span className="text-xl sm:text-1xl font-bold">Career Access Group</span>
           </div>
-          <p className="text-gray-300 mb-6 leading-relaxed">
+          <p className="text-gray-300 mb-4 leading-relaxed">
             Empowering professionals to achieve their career aspirations through personalized guidance and strategic development.
           </p>
           <div className="flex gap-4">
@@ -25,7 +25,7 @@ const Footer = () => (
         {/* Quick Links */}
         <div>
           <h3 className="text-accent-teal font-semibold mb-4">Quick Links</h3>
-          <div className="space-y-2">
+          <div className="space-y-3">
             <Link to="/" className="block text-gray-300 hover:text-white">Home</Link>
             <Link to="/about" className="block text-gray-300 hover:text-white">About Us</Link>
             <Link to="/partnerships" className="block text-gray-300 hover:text-white">Partnership</Link>
@@ -43,7 +43,7 @@ const Footer = () => (
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-secondary-orange" />
-              <span className="text-gray-300">+250 788 123 456</span>
+              <span className="text-gray-300">+250 793 520 508</span>
             </div>
           </div>
         </div>
@@ -56,14 +56,14 @@ const Footer = () => (
               <MapPin className="w-4 h-4 text-secondary-orange" />
               <span className="text-gray-300">Kigali, Rwanda</span>
             </div>
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-secondary-orange" />
               <span className="text-gray-300">Nairobi, Kenya</span>
-            </div>
-            <div className="flex items-center gap-2">
+            </div> */}
+            {/* <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-secondary-orange" />
               <span className="text-gray-300">Juba, South Sudan</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

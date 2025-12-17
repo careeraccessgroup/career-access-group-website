@@ -1,39 +1,40 @@
 import React from 'react'
 import Button from '../common/Button'
+import { Link } from 'react-router-dom'
 
 const Hero = () => (
   <section 
     className="
     relative min-h-screen flex items-center
-    bg-no-repeat bg-center
-    bg-contain md:bg-cover hero-bg
+    bg-no-repeat bg-center bg-cover hero-bg
   "
     style={{ 
-      backgroundImage: `url('/0V0A1760.jpg')`,
-      backgroundSize: "110% auto",
+      backgroundImage: `url('/hero.jpeg')`,
       willChange: 'transform'
     }}
   >
-    {/* <div className="absolute inset-0  bg-opacity-70"></div> */}
+    <div className="absolute inset-0  bg-opacity-70"></div>
       <div className="absolute inset-0 bg-linear-to-r from-primary-dark/70 to-primary-dark/40"></div>
 
     <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-white">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up">
-        Empowering Africa's Next Generation: 
+      <h1 className="text-2xl sm:text-2xl md:text-2xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up">
+        Empowering Africa's Next Generation:
         <span className="text-accent-teal block mt-2 animate-fade-in-up-delay-1">
           Revolutionizing Career Education
         </span>
         <span className="block mt-2 animate-fade-in-up-delay-2">
-          Through The Launch Pad
+          Through Innovative Curricula
         </span>
       </h1>
       <p className="text-lg sm:text-xl mb-6 sm:mb-8 max-w-2xl animate-fade-in-up-delay-3">
         Bridging the gap between ambition and achievement across the continent
       </p>
-      <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-base sm:text-lg transition-all duration-300 animate-fade-in-up-delay-4 flex items-center gap-2">
-        Discover The Launch Pad
-        <span className="text-lg sm:text-xl">→</span>
-      </Button>
+      <Link to="/activities/the-launchpad">
+        <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-base sm:text-lg transition-all duration-300 animate-fade-in-up-delay-4 flex items-center gap-2">
+          Discover The Launch Pad
+          <span className="text-lg sm:text-xl">→</span>
+        </Button>
+      </Link>
     </div>
   </section>
 )

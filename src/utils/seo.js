@@ -70,7 +70,30 @@ export const pageMetadata = {
     title: 'Contact Us',
     description: 'Get in touch with Career Access Group. Let\'s discuss how we can work together to empower Africa\'s youth.',
     image: '/0V0A1658.jpg'
-  }
+  },
+  'the-launchpad': {
+    title: 'The Launch Pad',
+    description: 'Transform your career with our comprehensive Launch Pad program. Gain skills, mentorship, and opportunities to succeed in today\'s job market.',
+    image: 'https://careeraccessgroup.com/0V0A1604.jpg'
+  },
+  'community-service': {
+    title: 'Community Service',
+    description: 'Making a positive impact through community service initiatives across Africa. Join our efforts to give back and create lasting change.',
+    image: 'https://careeraccessgroup.com/0V0A1640.jpg'
+  },
+  clubs: {
+    title: 'Clubs',
+    description: 'Join our vibrant clubs and communities. Connect with like-minded individuals and develop your interests and skills.',
+    image: 'https://careeraccessgroup.com/0V0A1776.jpg'  },
+  'career-fairs': {
+    title: 'Career Fairs',
+    description: 'Connect with top employers at our career fairs. Explore job opportunities, internships, and career development programs across Africa.',
+    image: 'https://careeraccessgroup.com/0V0A1640.jpg'
+  },
+  'scholars-program': {
+    title: 'Scholars Program',
+    description: 'Join our prestigious Scholars Program and unlock exclusive opportunities for academic excellence and professional growth.',
+    image: 'https://careeraccessgroup.com/0V0A1604.jpg'  }
 }
 
 export const structuredData = {

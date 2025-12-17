@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Introduction = () => (
   <section className="py-20 bg-bgcolor-200">
-    <div className="max-w-6xl mx-auto px-6">
+    <div className="max-w-5xl mx-auto px-6">
       {/* Welcome Header */}
       <div className="text-center mb-16">
-        <h2 className="text-2xl md:text-5xl font-bold text-textcolor-100 mb-4">
+        <h2 className="text-2xl md:text-4xl font-bold text-textcolor-100 mb-4">
           Welcome to <span className="text-primary-medium">CAREER<br />ACCESS GROUP</span>
         </h2>
         <div className="w-20 h-1 bg-secondary-orange mx-auto mb-6"></div>
@@ -17,8 +17,8 @@ const Introduction = () => (
       
       {/* Content Section */}
       <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-        <div className="animate-fade-in-up">
-          <p className="text-textcolor-200 mb-4 leading-relaxed text-base">
+        <div className="animate-fade-in-up ">
+          <p className="text-textcolor-200 mb-4 leading-relaxed  text-base">
             Welcome to <strong>CAREER ACCESS GROUP</strong> – where potential meets opportunity. We are dedicated to transforming the career landscape for Africa's youth by providing innovative programs that empower students and young professionals to navigate their career journeys with confidence.
           </p>
           <p className="text-textcolor-200 mb-4 leading-relaxed text-base">
@@ -32,17 +32,17 @@ const Introduction = () => (
           </Link>
         </div>
         <div className="animate-fade-in-up-delay-1">
-          <img src="/0V0A2042.jpg" alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
+          <img src="/001.jpg" alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
         </div>
       </div>
 
       {/* Launch Pad Section */}
       <div className="text-center mb-16 animate-fade-in-up-delay-2">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-medium mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary-medium mb-4">
           THE LAUNCH PAD:
           <span className="block">Innovation in Action</span>
         </h2>
-        <p className="text-textcolor-200 text-lg max-w-2xl mx-auto">
+        <p className="text-textcolor-200 text-md max-w-2xl mx-auto">
           Our flagship program designed to accelerate career success for Africa's ambitious youth
         </p>
       </div>
