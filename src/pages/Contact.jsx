@@ -18,19 +18,13 @@ const Contact = () => {
     alert('Thank you for reaching out! We will get back to you soon.')
   }
 
-  const locations = [
-    { country: '🇷🇼 Rwanda', city: 'Kigali', email: 'rwanda@careeraccessgroup.org', phone: '+250 788 123 456' },
-    { country: '🇰🇪 Kenya', city: 'Nairobi', email: 'kenya@careeraccessgroup.org', phone: '+254 700 123 456' },
-    { country: '🇸🇸 South Sudan', city: 'Juba', email: 'southsudan@careeraccessgroup.org', phone: '+211 900 123 456' }
-  ]
-
   return (
     <div>
       {/* Contact Hero */}
       <section className="py-20 bg-primary-dark text-white text-center">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg sm:text-xl">Let's Create Opportunities Together – Reach Out Today!</p>
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Contact Us</h1>
+          <p className="text-base sm:text-lg">Let's Create Opportunities Together – Reach Out Today!</p>
         </div>
       </section>
 
@@ -40,7 +34,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-textcolor-100">Get In Touch</h2>
+              <h2 className="text-2xl font-bold mb-6 text-textcolor-100">Get In Touch</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block mb-2 font-semibold text-textcolor-100">Full Name</label>
@@ -93,32 +87,14 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-textcolor-100">Our Locations</h2>
+              <h2 className="text-2xl font-bold mb-6 text-textcolor-100">Our Location</h2>
               
-              <div className="space-y-6 mb-8">
-                {locations.map((location, idx) => (
-                  <div key={idx} className="p-6 bg-bgcolor-300 border border-bordercolor-100 rounded-lg">
-                    <h3 className="text-xl font-bold mb-3 text-primary-medium">{location.country}</h3>
-                    <div className="space-y-2 text-textcolor-200">
-                      <div className="flex items-center gap-2">
-                        <MapPin size={16} className="text-secondary-orange" />
-                        <span>{location.city}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Mail size={16} className="text-secondary-orange" />
-                        <span>{location.email}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Phone size={16} className="text-secondary-orange" />
-                        <span>{location.phone}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              <div className="mb-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255203.55383056382!2d29.96243184589952!3d-1.9297626222122253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fbe52f740ac8675%3A0x7507ca3114e24395!2sCAREER%20ACCESS%20GROUP!5e0!3m2!1sen!2srw!4v1766349368186!5m2!1sen!2srw" width="100%" height="450" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
 
               <div className="p-6 bg-primary-dark text-white rounded-lg text-center">
-                <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+                <h3 className="text-lg font-bold mb-4">Follow Us</h3>
                 <div className="flex justify-center gap-4">
                   <a href="#" className="w-10 h-10 bg-primary-medium rounded-full flex items-center justify-center hover:bg-secondary-orange transition-colors">
                     <Facebook size={20} />

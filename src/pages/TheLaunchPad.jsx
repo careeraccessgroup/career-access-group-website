@@ -15,8 +15,8 @@ const TheLaunchPad = () => {
       {/* Hero Section */}
       <section className="py-20 bg-primary-dark text-white text-center">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">The Launch Pad: A Toolkit to Kickstart Your Career</h1>
-          <p className="text-lg sm:text-xl">Empowering Students to Navigate Their Future with Confidence</p>
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">The Launch Pad: A Toolkit to Kickstart Your Career</h1>
+          <p className="text-base sm:text-lg">Empowering Students to Navigate Their Future with Confidence</p>
         </div>
       </section>
 
@@ -25,8 +25,8 @@ const TheLaunchPad = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold mb-6 text-textcolor-100">About The Launch Pad</h2>
           <div className="space-y-4 text-textcolor-200">
-            <p className="text-textcolor-200">The Launch Pad is a comprehensive career guidance toolkit designed specifically for high school students preparing to transition into higher education and the professional world. Created by career development experts Adeline Mahoro and Caroline Kaari Mwangangi, this first edition publication provides a structured approach to career exploration, skill development, and future planning.</p>
-            <p className="text-textcolor-200">In today's rapidly evolving job market, students face unprecedented challenges and opportunities. The Launch Pad addresses these complexities by offering practical guidance, self-assessment tools, and strategic frameworks that help students make informed decisions about their academic and professional futures.</p>
+            <p className="text-textcolor-200 text-base">The Launch Pad is a comprehensive career guidance toolkit designed specifically for high school students preparing to transition into higher education and the professional world. Created by career development experts Adeline Mahoro and Caroline Kaari Mwangangi, this first edition publication provides a structured approach to career exploration, skill development, and future planning.</p>
+            <p className="text-textcolor-200 text-base">In today's rapidly evolving job market, students face unprecedented challenges and opportunities. The Launch Pad addresses these complexities by offering practical guidance, self-assessment tools, and strategic frameworks that help students make informed decisions about their academic and professional futures.</p>
           </div>
         </div>
       </section>
@@ -39,21 +39,21 @@ const TheLaunchPad = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary-orange rounded-full mt-2"></div>
-                <p className="text-textcolor-200"><strong>High School Students</strong> exploring career paths and post-secondary options</p>
+                <p className="text-textcolor-200 text-base"><strong>High School Students</strong> exploring career paths and post-secondary options</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary-orange rounded-full mt-2"></div>
-                <p className="text-textcolor-200"><strong>Educators and Counselors</strong> seeking structured career guidance resources</p>
+                <p className="text-textcolor-200 text-base"><strong>Educators and Counselors</strong> seeking structured career guidance resources</p>
               </div>
             </div>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary-orange rounded-full mt-2"></div>
-                <p className="text-textcolor-200"><strong>Parents</strong> wanting to support their children's career development journey</p>
+                <p className="text-textcolor-200 text-base"><strong>Parents</strong> wanting to support their children's career development journey</p>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-secondary-orange rounded-full mt-2"></div>
-                <p className="text-textcolor-200"><strong>Mentors</strong> working with youth on professional readiness</p>
+                <p className="text-textcolor-200 text-base"><strong>Mentors</strong> working with youth on professional readiness</p>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ const TheLaunchPad = () => {
               'Real-World Application with networking strategies and internship preparation',
               'Digital Wellness Focus addressing online safety and digital career opportunities'
             ].map((feature, index) => (
-              <div key={index} className="bg-gradient-to-br from-bgcolor-200 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="bg-linear-to-br from-bgcolor-200 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="w-8 h-8 bg-secondary-orange rounded-full flex items-center justify-center mb-3">
                   <span className="text-white font-bold text-sm">{index + 1}</span>
                 </div>
@@ -154,19 +154,34 @@ const TheLaunchPad = () => {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold mb-8 text-textcolor-100 animate-fade-in-up">About the Author</h2>
-          <div className="bg-linear-to-r from-primary-dark to-primary-medium rounded-2xl p-8 text-white animate-fade-in-up-delay-1">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="bg-linear-to-br from-primary-dark to-primary-medium rounded-2xl p-6 md:p-8 lg:p-10 text-white animate-fade-in-up-delay-1 shadow-2xl">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-8">
               <div className="shrink-0">
                 <img 
                   src="/CAA Profile photo/394A0573@0.5x.jpg" 
                   alt="Adeline Mahoro" 
-                  className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-lg"
+                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover border-4 border-white shadow-xl"
                 />
               </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl font-bold mb-2">Adeline Mahoro</h3>
-                <p className="text-secondary-orange font-semibold mb-4">Education Innovator & Career Development Expert</p>
-                <p className="leading-relaxed opacity-90">Adeline Mahoro is a passionate education innovator committed to revolutionizing career guidance for African youth. Her approach was inspired by the African Leadership Academy (ALA), which forged their commitment to developing solutions for pressing African challenges. The authors first partnered with NU Vision High School in Kigali, Rwanda to implement systematic career guidance programs, making it their "first born" initiative. Their dedication stems from a desire to equip young people with the tools to discover their passions and carve unique professional paths.</p>
+              <div className="flex-1 text-center lg:text-left space-y-4">
+                <div>
+                  <h3 className="text-xl sm:text-2xl lg:text-2xl font-bold mb-2">Adeline Mahoro</h3>
+                  <p className="text-secondary-orange font-semibold text-base sm:text-base lg:text-lg">Education Innovator & Career Development Expert</p>
+                </div>
+                
+                <div className="space-y-4 text-base sm:text-base leading-relaxed">
+                  <p className="opacity-95">
+                    Adeline Mahoro is a leader in education and youth empowerment, serving as Managing Director of Career Access Group. She has spearheaded initiatives that bridge career guidance with equitable access to higher education opportunities and career success, impacting over 4000 students across East Africa through her innovative The Launch Pad curriculum.
+                  </p>
+
+                  <p className="opacity-95">
+                    A lifelong advocate for transformative education, Adeline's journey began at the African Leadership Academy, where she earned her IGCSE Diploma (2012–2014) and her academic excellence landed her at United States International University (USIU-Africa) where she graduated with a Bachelor of Science in International Business Administration as a Mastercard Foundation Scholar and Dean's List honoree (2015–2019). She further honed her skills through the University of Rochester's Early Connection Africa Scholars Program and completed a Diploma in Career Guidance and Development (KNQF Level 6) in Nairobi.
+                  </p>
+
+                  <p className="opacity-95">
+                    Beyond her professional work, Adeline has volunteered with the Mastercard Foundation's giveback programs and advocated for disability inclusion through initiatives such as the International Lions Walk for the Blind. Driven by her own journey in the education sector, Adeline is now pursuing a Master of Education in Learning Design and Technologies at Arizona State University to scale her Launch Pad curriculum across Africa, ensuring every young person, regardless of background, can access the tools to design their future.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -189,7 +204,7 @@ const TheLaunchPad = () => {
             ].map((gain, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-accent-teal rounded-full mt-2"></div>
-                <p className="text-textcolor-200">{gain}</p>
+                <p className="text-textcolor-200 text-base">{gain}</p>
               </div>
             ))}
           </div>
@@ -197,22 +212,15 @@ const TheLaunchPad = () => {
       </section>
 
       {/* Get Your Copy */}
-      <section className="py-16 bg-primary-dark text-white text-center">
+      {/* <section className="py-16 bg-primary-dark text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold mb-6">Get Your Copy Today</h2>
-          <p className="text-lg mb-8">The Launch Pad is more than a book – it's a comprehensive toolkit that will transform how students approach their future. With practical exercises, real-world examples, and expert guidance, this resource is essential for anyone serious about career development.</p>
+          <p className="text-base mb-8 ">The Launch Pad is more than a book – it's a comprehensive toolkit that will transform how students approach their future. With practical exercises, real-world examples, and expert guidance, this resource is essential for anyone serious about career development.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-3 rounded-full font-semibold transition-colors">Order Now</button>
             <button className="bg-transparent border-2 border-white hover:bg-white hover:text-primary-dark px-8 py-3 rounded-full font-semibold transition-colors">Educator Resources</button>
             <button className="bg-transparent border-2 border-white hover:bg-white hover:text-primary-dark px-8 py-3 rounded-full font-semibold transition-colors">Contact Authors</button>
           </div>
-        </div>
-      </section>
-
-      {/* Footer Info */}
-      {/* <section className="py-8 bg-bgcolor-200 text-center">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <p className="text-textcolor-200 text-sm">Published by Besta Publishers | ISBN: 9789997705808 | © Copyright May 2025</p>
         </div>
       </section> */}
     </div>

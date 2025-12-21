@@ -39,32 +39,32 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="w-full bg-primary-dark text-white px-4 sm:px-6 py-2 border-b border-primary-medium shadow-md">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <nav className="w-full bg-white text-primary-dark px-4 sm:px-6 py-2 border-b border-primary-medium shadow-md">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 sm:gap-4 hover:opacity-90 transition-opacity">
           <img 
             src="/logo.png" 
             alt="Career Access Group Logo" 
             className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 object-cover rounded-full drop-shadow-lg" 
           />
-          <span className="text-base sm:text-md md:text-lg lg:text-1xl font-bold leading-tight">
+          <span className="text-base sm:text-md md:text-1xl lg:text-2xl font-bold leading-tight">
             Career Access Group
           </span>
         </Link>
 
         {/* desktop links */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          <Link to="/" className={`${location.pathname === '/' ? 'text-secondary-orange' : 'hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Home</Link>
-          <Link to="/about" className={`${location.pathname === '/about' ? 'text-secondary-orange' : 'hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>About</Link>
-          
-          <Link to="/partnerships" className={`${location.pathname === '/partnerships' ? 'text-secondary-orange' : 'hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Partnership</Link>
-          <Link to="/gallery" className={`${location.pathname === '/gallery' ? 'text-secondary-orange' : 'hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Gallery</Link>
-          
+          <Link to="/" className={`${location.pathname === '/' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Home</Link>
+          <Link to="/about" className={`${location.pathname === '/about' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>About</Link>
+          <Link to="/services" className={`${location.pathname === '/services' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Services</Link>
+          <Link to="/partnerships" className={`${location.pathname === '/partnerships' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Partnership</Link>
+          <Link to="/gallery" className={`${location.pathname === '/gallery' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Gallery</Link>
+          <Link to="/the-launchpad" className={`${location.pathname === '/launchpad' ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base`}>Launch Pad</Link>
           {/* Activities Dropdown with Fixed Positioning */}
           <div onMouseEnter={handleDesktopActivitiesEnter} onMouseLeave={handleDesktopActivitiesLeave}>
             <button 
               ref={buttonRef}
-              className={`${location.pathname.startsWith('/activities') ? 'text-secondary-orange' : 'hover:text-secondary-orange'} transition-colors text-sm lg:text-base flex items-center gap-1`}
+              className={`${location.pathname.startsWith('/activities') ? 'text-secondary-orange' : 'text-primary-dark hover:text-secondary-orange'} transition-colors text-sm lg:text-base flex items-center gap-1`}
             >
               Activities
               <svg className={`w-4 h-4 transition-transform ${desktopActivitiesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,9 +73,9 @@ const Navbar = () => {
             </button>
           </div>
 
-          <Link to="/partnerships">
+          <Link to="/contact">
             <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-4 lg:px-6 py-2 rounded-full text-white font-medium transition-colors text-sm lg:text-base">
-              Partner With Us
+              Contact Us
             </Button>
           </Link>
         </div>
@@ -121,13 +121,6 @@ const Navbar = () => {
           }}
         >
           <Link 
-            to="/activities/the-launchpad" 
-            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary-orange transition-colors rounded-t-md"
-            onClick={() => setDesktopActivitiesOpen(false)}
-          >
-            The Launch Pad
-          </Link>
-          <Link 
             to="/activities/community-service" 
             className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary-orange transition-colors"
             onClick={() => setDesktopActivitiesOpen(false)}
@@ -145,16 +138,26 @@ const Navbar = () => {
             onClick={() => setDesktopActivitiesOpen(false)}>Scholars Program</Link>
           <Link to="/activities/career-fairs" className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary-orange transition-colors rounded-b-md"
             onClick={() => setDesktopActivitiesOpen(false)}>Career Fairs</Link>
+            <Link 
+            to="/activities/university-fairs" 
+            className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary-orange transition-colors rounded-t-md"
+            onClick={() => setDesktopActivitiesOpen(false)}
+          >
+            University Fairs
+          </Link>
         </div>
       )}
 
       {/* mobile menu panel */}
       <div className={`md:hidden ${open ? 'block' : 'hidden'}`}>
         <div className="px-4 pt-4 pb-6 space-y-3 border-t" style={{ borderColor: 'var(--color-bordercolor-100)' }}>
-          <Link to="/" onClick={handleClose} className={`block ${location.pathname === '/' ? 'text-secondary-orange' : ''}`}>Home</Link>
-          <Link to="/about" onClick={handleClose} className={`block ${location.pathname === '/about' ? 'text-secondary-orange' : ''}`}>About</Link>
+          <Link to="/" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/' ? 'text-secondary-orange' : ''}`}>Home</Link>
+          <Link to="/about" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/about' ? 'text-secondary-orange' : ''}`}>About</Link>
+          <Link to="/services" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/services' ? 'text-secondary-orange' : ''}`}>Services</Link>
+            <Link to="/the-launchpad" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/launchpad' ? 'text-secondary-orange' : ''}`}>Launch Pad</Link>
           <div>
-            <button onClick={handleActivitiesToggle} className="flex items-center justify-between w-full text-left">
+            
+            <button onClick={handleActivitiesToggle} className="flex items-center justify-between w-full text-left text-primary-dark">
               Activities
               <svg className={`w-4 h-4 transition-transform ${activitiesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -162,19 +165,19 @@ const Navbar = () => {
             </button>
             {activitiesOpen && (
               <div className="ml-4 mt-2 space-y-2">
-                <Link to="/activities/the-launchpad" onClick={handleClose} className="block text-sm">The Launch Pad</Link>
-                <Link to="/activities/community-service" onClick={handleClose} className="block text-sm">Community Service</Link>
-                <Link to="/activities/clubs" onClick={handleClose} className="block text-sm">Clubs</Link>
-                <Link to="/activities/scholars-program" onClick={handleClose} className="block text-sm">Scholars Program</Link>
-                <Link to="/activities/career-fairs" onClick={handleClose} className="block text-sm">Career Fairs</Link>
+                <Link to="/activities/community-service" onClick={handleClose} className="block text-sm text-primary-dark hover:text-secondary-orange">Community Service</Link>
+                <Link to="/activities/clubs" onClick={handleClose} className="block text-sm text-primary-dark hover:text-secondary-orange">Clubs</Link>
+                <Link to="/activities/scholars-program" onClick={handleClose} className="block text-sm text-primary-dark hover:text-secondary-orange">Scholars Program</Link>
+                <Link to="/activities/career-fairs" onClick={handleClose} className="block text-sm text-primary-dark hover:text-secondary-orange">Career Fairs</Link>
+                <Link to="/activities/university-fairs" onClick={handleClose} className="block text-sm text-primary-dark hover:text-secondary-orange">University Fairs</Link>
               </div>
             )}
           </div>
-          <Link to="/partnerships" onClick={handleClose} className={`block ${location.pathname === '/partnerships' ? 'text-secondary-orange' : ''}`}>Partnership</Link>
-          <Link to="/gallery" onClick={handleClose} className={`block ${location.pathname === '/gallery' ? 'text-secondary-orange' : ''}`}>Gallery</Link>
+          <Link to="/partnerships" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/partnerships' ? 'text-secondary-orange' : ''}`}>Partnership</Link>
+          <Link to="/gallery" onClick={handleClose} className={`block text-primary-dark ${location.pathname === '/gallery' ? 'text-secondary-orange' : ''}`}>Gallery</Link>
           <div className="pt-2">
             <Button onClick={() => { handleClose(); window.location.href = '/contact' }} className="w-full bg-secondary-orange px-4 py-2 rounded-full text-white font-medium text-sm">
-              Partner With Us
+              Contact Us
             </Button>
           </div>
         </div>

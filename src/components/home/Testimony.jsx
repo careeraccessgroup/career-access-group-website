@@ -30,10 +30,10 @@ const Testimony = () => {
     <section className="py-14 bg-bgcolor-200">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-1xl md:text-2xl font-bold text-textcolor-100 mb-4 animate-fade-in-up">
+          <h2 className="text-2xl md:text-3xl font-bold text-textcolor-100 mb-4 animate-fade-in-up">
             What Our Clients Say
           </h2>
-          <p className="text-textcolor-200 text-md animate-fade-in-up-delay-1">
+          <p className="text-base text-textcolor-200 animate-fade-in-up-delay-1">
             Success stories from professionals we've helped
           </p>
         </div>

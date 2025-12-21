@@ -1,8 +1,42 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { updateMetaTags } from '../utils/seo'
-import { Users, Target, Lightbulb, Building2, Stethoscope, Briefcase, Palette, GraduationCap } from 'lucide-react'
+import { Users, Target, Lightbulb, Building2, Stethoscope, Briefcase, Palette, GraduationCap, User, Phone, Mail, MapPin } from 'lucide-react'
 
 const CareerFair = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+    email: '',
+    profession: '',
+    company: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.contact.trim()) newErrors.contact = 'Contact number is required';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Valid email is required';
+    if (!formData.profession.trim()) newErrors.profession = 'Profession is required';
+    if (!formData.company.trim()) newErrors.company = 'Company is required';
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length === 0) {
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }
+    setErrors(newErrors);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: '' });
+  };
   useEffect(() => {
     updateMetaTags({
       title: 'Career Fair',
@@ -165,6 +199,99 @@ const CareerFair = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Registration Form */}
+      <section className="py-12 bg-bgcolor-200">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="bg-white shadow-lg rounded-lg p-8">
+            <div className="flex items-center gap-3 mb-6 justify-center">
+              <Briefcase className="text-primary-medium w-8 h-8" />
+              <h3 className="text-2xl font-bold text-primary-dark">Join Our Career Fair</h3>
+            </div>
+            
+            {isSubmitted && (
+              <div className="bg-successcolor-100/10 border border-successcolor-100 text-successcolor-100 p-4 rounded-lg mb-6">
+                Registration submitted successfully! We'll contact you soon.
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="relative">
+                <User className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.name ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                />
+                {errors.name && <p className="text-errorcolor-100 text-sm mt-1">{errors.name}</p>}
+              </div>
+
+              <div className="relative">
+                <Phone className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
+                <input
+                  type="tel"
+                  name="contact"
+                  placeholder="Contact Number"
+                  value={formData.contact}
+                  onChange={handleChange}
+                  className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.contact ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                />
+                {errors.contact && <p className="text-errorcolor-100 text-sm mt-1">{errors.contact}</p>}
+              </div>
+
+              <div className="relative">
+                <Mail className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.email ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                />
+                {errors.email && <p className="text-errorcolor-100 text-sm mt-1">{errors.email}</p>}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative">
+                  <Briefcase className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
+                  <input
+                    type="text"
+                    name="profession"
+                    placeholder="Profession"
+                    value={formData.profession}
+                    onChange={handleChange}
+                    className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.profession ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                  />
+                  {errors.profession && <p className="text-errorcolor-100 text-sm mt-1">{errors.profession}</p>}
+                </div>
+                <div className="relative">
+                  <Building2 className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.company ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                  />
+                  {errors.company && <p className="text-errorcolor-100 text-sm mt-1">{errors.company}</p>}
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-secondary-orange hover:bg-secondary-hover-100 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
+              >
+                Register as Professional
+              </button>
+            </form>
           </div>
         </div>
       </section>

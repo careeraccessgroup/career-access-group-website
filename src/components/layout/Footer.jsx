@@ -12,7 +12,7 @@ const Footer = () => (
             <img src="/logo.svg" alt="Career Access Group Logo" className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-cover rounded-full drop-shadow-lg" />
             <span className="text-xl sm:text-1xl font-bold">Career Access Group</span>
           </div>
-          <p className="text-gray-300 mb-4 leading-relaxed">
+          <p className="text-gray-300 mb-4 leading-relaxed text-base">
             Empowering professionals to achieve their career aspirations through personalized guidance and strategic development.
           </p>
           <div className="flex gap-4">
@@ -29,7 +29,7 @@ const Footer = () => (
             <Link to="/" className="block text-gray-300 hover:text-white">Home</Link>
             <Link to="/about" className="block text-gray-300 hover:text-white">About Us</Link>
             <Link to="/partnerships" className="block text-gray-300 hover:text-white">Partnership</Link>
-            {/* <Link to="/contact" className="block text-gray-300 hover:text-white">Contact</Link> */}
+            <Link to="/contact" className="block text-gray-300 hover:text-white">Contact</Link>
           </div>
         </div>
         

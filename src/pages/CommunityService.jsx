@@ -17,7 +17,7 @@ const CommunityService = () => {
       <section className="py-20 bg-primary-dark text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h1 className="text-2xl md:text-3xl font-bold mb-4 animate-fade-in-up">Community Service</h1>
-          <p className="text-md sm:text-lg animate-fade-in-up-delay-1">The Role of Community Service in Career Identification for High School Students</p>
+          <p className="text-base sm:text-lg animate-fade-in-up-delay-1">The Role of Community Service in Career Identification for High School Students</p>
         </div>
       </section>
 
@@ -34,10 +34,10 @@ const CommunityService = () => {
             </div>
             <div className="lg:w-1/2 animate-fade-in-up-delay-1">
               <h2 className="text-2xl font-bold mb-6 text-textcolor-100">Creating Positive Impact Through Service</h2>
-              <p className="text-textcolor-200 leading-relaxed mb-4">
+              <p className="text-textcolor-200 leading-relaxed mb-4 text-base">
                 Community service plays a vital role in helping high school students explore and identify potential career paths. This experiential learning opportunity extends beyond the classroom, offering real-world insights that can significantly influence future career decisions.
               </p>
-              <p className="text-textcolor-200 leading-relaxed">
+              <p className="text-textcolor-200 leading-relaxed text-base">
                 Through meaningful service, students discover their passions, develop essential skills, and build connections that shape their professional futures.
               </p>
             </div>
@@ -108,7 +108,7 @@ const CommunityService = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 animate-fade-in-up">
               <h2 className="text-2xl font-bold mb-6 text-textcolor-100">Development of Professional Identity</h2>
-              <p className="text-textcolor-200 leading-relaxed mb-6">
+              <p className="text-textcolor-200 leading-relaxed mb-6 text-base">
                 By taking on responsibilities and seeing projects through to completion, students begin to envision themselves as professionals, building confidence in their ability to contribute meaningfully to society.
               </p>
               <div className="space-y-4">

@@ -90,10 +90,10 @@ const PartnershipForm = () => {
     <section className="py-20 bg-primary-light">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
             Ready to Partner With Us?
           </h2>
-          <p className="text-white text-md leading-relaxed max-w-3xl mx-auto">
+          <p className="text-white text-base leading-relaxed max-w-3xl mx-auto">
             Ready to explore how a partnership with CAREER ACCESS GROUP can create mutual value while driving meaningful impact? Let's start the conversation about building a collaboration that benefits your organization and empowers the next generation of African talent.
           </p>
         </div>

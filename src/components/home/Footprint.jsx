@@ -9,7 +9,7 @@ const Footprint = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-textcolor-100 mb-4 animate-fade-in-up">
             Our Footprint: East Africa & Beyond
           </h2>
-          <p className="text-textcolor-200 text-lg max-w-3xl mx-auto animate-fade-in-up-delay-1">
+          <p className="text-base text-textcolor-200 max-w-3xl mx-auto animate-fade-in-up-delay-1">
             With established operations in our core market while leveraging regional synergies
           </p>
         </div>
@@ -26,7 +26,7 @@ const Footprint = () => {
           </div>
           
           <div className="text-center text-white mb-8 max-w-3xl mx-auto">
-            <p className="text-md leading-relaxed">
+            <p className="text-base leading-relaxed">
               We're deeply rooted in local contexts while leveraging regional synergies. Our teams understand the unique challenges and opportunities in each market, ensuring culturally relevant and impactful programming.
             </p>
           </div>

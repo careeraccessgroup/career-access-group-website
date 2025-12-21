@@ -20,7 +20,7 @@ const Values = () => {
           <h2 className={`text-2xl md:text-3xl font-bold text-white mb-4 transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
             Our Core Values
           </h2>
-          <p className={`text-white text-md transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
+          <p className={`text-white text-base transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '100ms' : '0ms' }}>
             The principles that guide everything we do
           </p>
         </div>
@@ -38,7 +38,7 @@ const Values = () => {
                   <Icon className="text-white" size={24} />
                 </div>
                 <h3 className="text-1xl font-bold text-textcolor-100 mb-4">{value.title}</h3>
-                <p className="text-textcolor-200 leading-relaxed">{value.description}</p>
+                <p className="text-base text-textcolor-200 leading-relaxed">{value.description}</p>
               </div>
             )
           })}

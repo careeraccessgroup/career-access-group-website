@@ -5,7 +5,7 @@ const Team = () => {
     {
       id: 1,
       name: 'Adeline Mahoro',
-      role: 'Chief Executive Officer',
+      role: 'Managing Director',
       description: '15+ years in HR leadership with expertise in talent acquisition and organizational development.',
       image: '/CAA Profile photo/394A0573@0.5x.jpg'
     },
@@ -57,10 +57,10 @@ const Team = () => {
     <section className="py-20 bg-bgcolor-200">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-textcolor-100 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-textcolor-100 mb-4">
             Meet Our Leadership Team
           </h2>
-          <p className="text-textcolor-200 text-md">
+          <p className="text-textcolor-200 text-base">
             Experienced professionals dedicated to advancing careers and building meaningful connections.
           </p>
         </div>

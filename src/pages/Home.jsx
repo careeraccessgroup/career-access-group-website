@@ -21,7 +21,7 @@ const Home = () => {
       <Partner />
       <Footprint />
       <Testimony />
-      <CallToAction />
+      {/* <CallToAction /> */}
     </div>
   )
 }
