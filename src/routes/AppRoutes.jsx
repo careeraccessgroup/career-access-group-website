@@ -19,7 +19,7 @@ const AppRoutes = () => (
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="/services" element={<Services />} />
-    <Route path="/activities/the-launchpad" element={<TheLaunchPad />} />
+    <Route path="/the-launchpad" element={<TheLaunchPad />} />
     <Route path="/partnerships" element={<Partnerships />} />
     <Route path="/gallery" element={<Gallery />} />
     <Route path="/careers" element={<Careers />} />
