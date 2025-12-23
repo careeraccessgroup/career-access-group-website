@@ -87,7 +87,7 @@ const PartnershipForm = () => {
   }
 
   return (
-    <section className="py-20 bg-primary-light">
+    <section className="py-20 bg-primary-light" id="partnership-form">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">

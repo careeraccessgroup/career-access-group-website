@@ -210,9 +210,20 @@ const TheLaunchPad = () => {
           </div>
         </div>
       </section>
-
+{/* Publication Info */}
+      <section className="py-8 bg-bgcolor-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-secondary-orange animate-fade-in-up hover:shadow-lg transition-all duration-300">
+            <p className="text-textcolor-100 font-semibold text-base animate-fade-in-up-delay-1">
+              Published by <span className="text-primary-medium">Besta Publishers</span> | 
+              ISBN: <span className="text-primary-medium">9789997705808</span> | 
+              <span className="text-secondary-orange">©Copyright May 2025</span>
+            </p>
+          </div>
+        </div>
+      </section>
       {/* Get Your Copy */}
-      {/* <section className="py-16 bg-primary-dark text-white text-center">
+      <section className="py-16 bg-primary-dark text-white text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold mb-6">Get Your Copy Today</h2>
           <p className="text-base mb-8 ">The Launch Pad is more than a book – it's a comprehensive toolkit that will transform how students approach their future. With practical exercises, real-world examples, and expert guidance, this resource is essential for anyone serious about career development.</p>
@@ -222,7 +233,9 @@ const TheLaunchPad = () => {
             <button className="bg-transparent border-2 border-white hover:bg-white hover:text-primary-dark px-8 py-3 rounded-full font-semibold transition-colors">Contact Authors</button>
           </div>
         </div>
-      </section> */}
+      </section>
+
+      
     </div>
   )
 }

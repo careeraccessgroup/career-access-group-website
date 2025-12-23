@@ -46,7 +46,7 @@ const UniversityFair = () => {
       <section className="relative bg-linear-to-br from-primary-dark to-primary-medium text-textcolor-300 py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-2xl font-bold mb-6 animate-fade-in-up">University Fair</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 animate-fade-in-up">University Fair</h1>
           <p className="text-md max-w-3xl mx-auto animate-fade-in-up-delay-1">
             Critical catalysts in demystifying higher education and empowering students to make informed post-secondary choices
           </p>

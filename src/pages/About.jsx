@@ -9,6 +9,12 @@ import Team from '../components/Team';
 
 const About = () => (
   <div>
+    <section className="py-20 bg-primary-dark text-white text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">About Us</h1>
+          <p className="text-base sm:text-lg">Measuring success through meaningful outcomes</p>
+        </div>
+      </section>
     {/* Hero Section */}
     <section className="py-20 bg-bgcolor-200">
       <div className="max-w-6xl mx-auto px-6">
@@ -16,7 +22,7 @@ const About = () => (
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-textcolor-100 mb-6">About Us</h1>
             <p className="text-textcolor-200 text-base leading-relaxed">
-              Career Access Africa Group is a leading youth empowerment organization revolutionizing career education across the continent. Founded on the principle that every young African deserves the tools to succeed professionally, we combine innovative technology, localized expertise, and strategic partnerships through our flagship program, The Launch Pad. With a strong presence in Rwanda, Kenya, and South Sudan, we are committed to building a generation of confident, skilled, and purpose-driven leaders.
+              Career Access Africa Group is a leading youth empowerment organization revolutionizing career education across the continent. Founded on the principle that every young African deserves the tools to succeed professionally, we combine innovative technology, localized expertise, and strategic partnerships through our flagship program, The Launch Pad. With a strong presence in Rwanda, we are committed to building a generation of confident, skilled, and purpose-driven leaders.
             </p>
           </div>
           <div>

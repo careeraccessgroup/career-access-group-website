@@ -6,7 +6,7 @@ const Team = () => {
       id: 1,
       name: 'Adeline Mahoro',
       role: 'Managing Director',
-      description: '15+ years in HR leadership with expertise in talent acquisition and organizational development.',
+      description: 'Leader in education and youth empowerment, impacting over 4000 students across East Africa through innovative career guidance and The Launch Pad curriculum.',
       image: '/CAA Profile photo/394A0573@0.5x.jpg'
     },
     // {
@@ -79,7 +79,7 @@ const Team = () => {
               />
               <h3 className="text-xl font-bold text-textcolor-100 mb-2">{member.name}</h3>
               <h4 className="text-primary-medium font-semibold mb-4">{member.role}</h4>
-              <p className="text-textcolor-200 text-sm leading-relaxed">{member.description}</p>
+              <p className="text-textcolor-200 text-sm leading-relaxed line-clamp-4">{member.description}</p>
             </div>
           ))}
         </div>

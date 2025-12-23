@@ -43,7 +43,7 @@ const Services = () => {
       <section className="relative bg-linear-to-br from-primary-dark to-primary-medium text-textcolor-300 py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-2xl font-bold mb-6 animate-fade-in-up">Comprehensive Service Portfolio</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 animate-fade-in-up">Comprehensive Service Portfolio</h1>
           <p className="text-base max-w-3xl mx-auto animate-fade-in-up-delay-1">
             End-to-End Career Lifecycle Support from High School to Corporate Success
           </p>
@@ -76,7 +76,7 @@ const Services = () => {
                 <h3 className="text-xl font-bold text-primary-dark">End-to-End Career Lifecycle Support</h3>
               </div>
               <p className="text-textcolor-200 text-base leading-relaxed">
-                We are the only partner that supports an individual's entire journey, from choosing a high school career path and securing university admission, to landing a first job, and progressing through a successful corporate career.
+                We are the only partner that supports an individual's entire journey, from choosing a high school career path and securing university admission, to landing a first job, and progressing through a successful corporate and entrepreneurial career.
               </p>
             </div>
           </div>
@@ -140,8 +140,9 @@ const Services = () => {
                   {
                     title: 'Institutional Collaboration',
                     points: [
+                      'Curriculum Development for Schools: We collaborate with educational institutions to align their curricula with career readiness and future workforce demands.',
                       'Career Fair Planning: University partnership events',
-                      'Curriculum Development: Career readiness alignment'
+                      
                     ],
                     Icon: Building2,
                     color: 'bg-primary-dark'

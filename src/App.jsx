@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { useEffect } from 'react'
 import Layout from './components/layout/Layout'
 import AppRoutes from './routes/AppRoutes'
+import ScrollToTop from './components/common/ScrollToTop'
 import { preloadCriticalImages } from './utils/imagePreloader'
 import { addStructuredData } from './utils/seo'
 
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <AppRoutes />
+        <ScrollToTop />
       </Layout>
     </BrowserRouter>
   )

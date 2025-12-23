@@ -75,7 +75,11 @@ const Partnerships = () => {
           <p className={`text-base mb-8 max-w-3xl mx-auto transition-all duration-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '120ms' : '0ms' }}>
             Shape the Future of African Talent – Partner With Us Today!
           </p>
-          <Button className={`bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-4 rounded-full text-white font-semibold text-lg transition-colors ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} style={{ transitionDelay: mounted ? '240ms' : '0ms' }}>
+          <Button 
+            onClick={() => document.getElementById('partnership-form')?.scrollIntoView({ behavior: 'smooth' })}
+            className={`bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-4 rounded-full text-white font-semibold text-lg transition-colors ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`} 
+            style={{ transitionDelay: mounted ? '240ms' : '0ms' }}
+          >
             Start Partnership Discussion
           </Button>
         </div>

@@ -19,16 +19,16 @@ const AppRoutes = () => (
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="/services" element={<Services />} />
-    <Route path="/the-launchpad" element={<TheLaunchPad />} />
+    <Route path="/curricula/the-launchpad" element={<TheLaunchPad />} />
     <Route path="/partnerships" element={<Partnerships />} />
     <Route path="/gallery" element={<Gallery />} />
     <Route path="/careers" element={<Careers />} />
     <Route path="/contact" element={<Contact />} />
-    <Route path="/activities/community-service" element={<CommunityService />} />
-    <Route path="/activities/clubs" element={<Clubs />} />
-    <Route path="/activities/career-fairs" element={<CareerFair />} />
-    <Route path="/activities/university-fairs" element={<UniversityFair />} />
-    <Route path="/activities/scholars-program" element={<Scholars />} />
+    <Route path="/programs/community-service" element={<CommunityService />} />
+    <Route path="/programs/clubs" element={<Clubs />} />
+    <Route path="/programs/career-fairs" element={<CareerFair />} />
+    <Route path="/programs/university-fairs" element={<UniversityFair />} />
+    <Route path="/programs/scholars-program" element={<Scholars />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 )

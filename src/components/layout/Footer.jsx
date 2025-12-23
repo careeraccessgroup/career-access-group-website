@@ -13,7 +13,7 @@ const Footer = () => (
             <span className="text-xl sm:text-1xl font-bold">Career Access Group</span>
           </div>
           <p className="text-gray-300 mb-4 leading-relaxed text-base">
-            Empowering professionals to achieve their career aspirations through personalized guidance and strategic development.
+            We're transforming education across the continent by equipping young Africans with the tools, confidence, and guidance to forge meaningful career paths.
           </p>
           <div className="flex gap-4">
             <Linkedin className="w-5 h-5 text-accent-teal hover:text-white cursor-pointer" />
