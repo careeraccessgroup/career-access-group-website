@@ -8,13 +8,18 @@ import Footprint from '../components/home/Footprint';
 import Team from '../components/Team';
 
 const About = () => (
-  <div>
-    <section className="py-20 bg-primary-dark text-white text-center">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">About Us</h1>
-          <p className="text-base sm:text-lg">Measuring success through meaningful outcomes</p>
+  <div className="min-h-screen bg-bgcolor-100">
+    {/* Hero Section */}
+      <section className="relative bg-linear-to-br from-primary-dark to-primary-medium text-textcolor-300 py-20">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-2xl md:text-3xl font-bold mb-6 animate-fade-in-up">About Us</h1>
+          <p className="text-base max-w-3xl mx-auto animate-fade-in-up-delay-1">
+            Measuring success through meaningful outcomes
+          </p>
         </div>
       </section>
+    
     {/* Hero Section */}
     <section className="py-20 bg-bgcolor-200">
       <div className="max-w-6xl mx-auto px-6">
