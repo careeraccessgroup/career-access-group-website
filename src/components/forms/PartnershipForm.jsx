@@ -1,5 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Button from '../common/Button'
+import { 
+  sanitizeInput, 
+  checkRateLimit, 
+  checkFormTiming,
+  generateHoneypotName,
+  validateHoneypot
+} from '../../utils/formSecurity'
 
 const PartnershipForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +16,13 @@ const PartnershipForm = () => {
     partnershipType: 'Educational Institution',
     partnershipGoals: ''
   })
+  const [honeypot, setHoneypot] = useState('')
+  const honeypotName = useRef(generateHoneypotName())
+  const formStartTime = useRef(Date.now())
+
+  useEffect(() => {
+    formStartTime.current = Date.now()
+  }, [])
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
@@ -54,6 +68,26 @@ const PartnershipForm = () => {
     setSubmitError('')
     setSubmitMessage('')
 
+    // Rate limiting check
+    const rateLimit = checkRateLimit('partnership', 3, 15)
+    if (!rateLimit.allowed) {
+      setSubmitError(rateLimit.message)
+      return
+    }
+
+    // Form timing check
+    const timingCheck = checkFormTiming(formStartTime.current, 5)
+    if (!timingCheck.allowed) {
+      setSubmitError(timingCheck.message)
+      return
+    }
+
+    // Honeypot validation
+    if (!validateHoneypot(honeypot)) {
+      setSubmitError('Submission failed. Please try again.')
+      return
+    }
+
     if (!validateForm()) {
       return
     }
@@ -61,25 +95,39 @@ const PartnershipForm = () => {
     setIsSubmitting(true)
 
     try {
-      // Send form data to backend or email service
-      // For now, we'll log it and show success message
-      console.log('Partnership form submitted:', formData)
-      
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const formDataObj = new FormData()
+      formDataObj.append('access_key', import.meta.env.VITE_FORM_API)
+      formDataObj.append('subject', 'New Partnership Inquiry')
+      formDataObj.append('organizationName', formData.organizationName)
+      formDataObj.append('contactPerson', formData.contactPerson)
+      formDataObj.append('emailAddress', formData.emailAddress)
+      formDataObj.append('partnershipType', formData.partnershipType)
+      formDataObj.append('partnershipGoals', formData.partnershipGoals)
+      formDataObj.append('botcheck', '')
 
-      setSubmitMessage('Thank you! We received your partnership inquiry. Our team will contact you shortly.')
-      
-      // Reset form after successful submission
-      setFormData({
-        organizationName: '',
-        contactPerson: '',
-        emailAddress: '',
-        partnershipType: 'Educational Institution',
-        partnershipGoals: ''
+      const response = await fetch(import.meta.env.VITE_FORM_API_URL, {
+        method: 'POST',
+        body: formDataObj
       })
+
+      const data = await response.json()
+      
+      if (data.success) {
+        setSubmitMessage('Thank you! We received your partnership inquiry. Our team will contact you shortly.')
+        setFormData({
+          organizationName: '',
+          contactPerson: '',
+          emailAddress: '',
+          partnershipType: 'Educational Institution',
+          partnershipGoals: ''
+        })
+        setHoneypot('')
+        formStartTime.current = Date.now()
+      } else {
+        const errorMsg = data.message || 'An error occurred while submitting the form. Please try again.'
+        setSubmitError(sanitizeInput(errorMsg))
+      }
     } catch (error) {
-      console.error('Form submission error:', error)
       setSubmitError('An error occurred while submitting the form. Please try again.')
     } finally {
       setIsSubmitting(false)
@@ -100,6 +148,18 @@ const PartnershipForm = () => {
 
         <div className="bg-white rounded-lg p-8 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot field - hidden from users */}
+            <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+              <input
+                type="text"
+                name={honeypotName.current}
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+              />
+            </div>
             {submitMessage && (
               <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg" role="alert">
                 {submitMessage}
@@ -126,6 +186,8 @@ const PartnershipForm = () => {
                   className="w-full px-4 py-3 border border-bordercolor-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-medium"
                   placeholder="Your organization name"
                   required
+                  minLength="2"
+                  maxLength="100"
                   disabled={isSubmitting}
                 />
               </div>
@@ -200,6 +262,8 @@ const PartnershipForm = () => {
                 placeholder="Tell us about your organization's goals and how you envision partnering with us..."
                 className="w-full px-4 py-3 border border-bordercolor-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-medium resize-none"
                 required
+                minLength="20"
+                maxLength="1000"
                 disabled={isSubmitting}
               />
             </div>

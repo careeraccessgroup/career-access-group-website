@@ -1,5 +1,12 @@
-import React, { useState } from 'react'
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Facebook, Linkedin, Twitter } from 'lucide-react'
+import { 
+  sanitizeInput, 
+  checkRateLimit, 
+  checkFormTiming,
+  generateHoneypotName,
+  validateHoneypot
+} from '../utils/formSecurity'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,14 +15,76 @@ const Contact = () => {
     organization: '',
     message: ''
   })
+  const [honeypot, setHoneypot] = useState('')
+  const honeypotName = useRef(generateHoneypotName())
+  const formStartTime = useRef(Date.now())
+
+  useEffect(() => {
+    // Reset form start time when component mounts
+    formStartTime.current = Date.now()
+  }, [])
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value})
   }
 
-  const handleSubmit = (e) => {
+  const [result, setResult] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Thank you for reaching out! We will get back to you soon.')
+    setIsSubmitting(true)
+    setResult('')
+
+    // Rate limiting check
+    const rateLimit = checkRateLimit('contact', 3, 15)
+    if (!rateLimit.allowed) {
+      setResult(rateLimit.message)
+      setIsSubmitting(false)
+      return
+    }
+
+    // Form timing check (minimum 5 seconds)
+    const timingCheck = checkFormTiming(formStartTime.current, 5)
+    if (!timingCheck.allowed) {
+      setResult(timingCheck.message)
+      setIsSubmitting(false)
+      return
+    }
+
+    // Honeypot validation
+    if (!validateHoneypot(honeypot)) {
+      setResult('Submission failed. Please try again.')
+      setIsSubmitting(false)
+      return
+    }
+
+    const formData = new FormData(e.target)
+    formData.append('access_key', import.meta.env.VITE_FORM_API)
+    formData.append('subject', 'New Contact Form Submission')
+    formData.append('botcheck', '')
+
+    try {
+      const response = await fetch(import.meta.env.VITE_FORM_API_URL, {
+        method: 'POST',
+        body: formData
+      })
+
+      const data = await response.json()
+      if (data.success) {
+        setResult('Thank you for reaching out! We will get back to you soon.')
+        setFormData({ name: '', email: '', organization: '', message: '' })
+        setHoneypot('')
+        formStartTime.current = Date.now() // Reset timer for next submission
+      } else {
+        const errorMsg = data.message || 'Something went wrong. Please try again.'
+        setResult(sanitizeInput(errorMsg))
+      }
+    } catch {
+      setResult('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -35,7 +104,24 @@ const Contact = () => {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold mb-6 text-textcolor-100">Get In Touch</h2>
+              {result && (
+                <div className={`p-4 rounded-lg ${result.includes('Thank you') ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-700'}`}>
+                  {result}
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field - hidden from users */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                  <input
+                    type="text"
+                    name={honeypotName.current}
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex="-1"
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+                </div>
                 <div>
                   <label className="block mb-2 font-semibold text-textcolor-100">Full Name</label>
                   <input
@@ -45,6 +131,8 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-bordercolor-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-medium"
                     required
+                    minLength="2"
+                    maxLength="100"
                   />
                 </div>
                 <div>
@@ -72,15 +160,18 @@ const Contact = () => {
                   <label className="block mb-2 font-semibold text-textcolor-100">Message</label>
                   <textarea
                     name="message"
+                    placeholder='Your message here...'
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
                     className="w-full px-4 py-3 border border-bordercolor-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-medium resize-none"
                     required
+                    minLength="10"
+                    maxLength="1000"
                   />
                 </div>
-                <button type="submit" className="w-full py-3 bg-secondary-orange hover:bg-secondary-hover-100 text-white font-semibold rounded-lg transition-colors">
-                  Send Message
+                <button type="submit" disabled={isSubmitting} className="w-full py-3 bg-secondary-orange hover:bg-secondary-hover-100 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

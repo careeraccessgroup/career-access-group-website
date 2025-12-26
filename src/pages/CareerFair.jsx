@@ -1,6 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import axios from 'axios'
 import { updateMetaTags } from '../utils/seo'
 import { Users, Target, Lightbulb, Building2, Stethoscope, Briefcase, Palette, GraduationCap, User, Phone, Mail, MapPin, X } from 'lucide-react'
+import { 
+  sanitizeInput, 
+  checkRateLimit, 
+  checkFormTiming,
+  generateHoneypotName,
+  validateHoneypot
+} from '../utils/formSecurity'
 
 const CareerFair = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -11,8 +19,16 @@ const CareerFair = () => {
     profession: '',
     company: ''
   });
+  const [honeypot, setHoneypot] = useState('');
+  const honeypotName = useRef(generateHoneypotName());
+  const formStartTime = useRef(Date.now());
   const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState('');
+
+  useEffect(() => {
+    formStartTime.current = Date.now();
+  }, []);
 
   const validateForm = () => {
     const newErrors = {};
@@ -24,14 +40,65 @@ const CareerFair = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({});
     const newErrors = validateForm();
+    
     if (Object.keys(newErrors).length === 0) {
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
+      // Rate limiting check
+      const rateLimit = checkRateLimit('career-fair', 3, 15);
+      if (!rateLimit.allowed) {
+        setResult(rateLimit.message);
+        return;
+      }
+
+      // Form timing check
+      const timingCheck = checkFormTiming(formStartTime.current, 5);
+      if (!timingCheck.allowed) {
+        setResult(timingCheck.message);
+        return;
+      }
+
+      // Honeypot validation
+      if (!validateHoneypot(honeypot)) {
+        setResult('Submission failed. Please try again.');
+        return;
+      }
+
+      setIsSubmitting(true);
+      setResult('');
+
+      try {
+        const submitData = {
+          access_key: import.meta.env.VITE_FORM_API,
+          subject: 'Career Fair Professional Registration',
+          name: formData.name,
+          contact: formData.contact,
+          email: formData.email,
+          profession: formData.profession,
+          company: formData.company,
+          botcheck: ''
+        }
+
+        const response = await axios.post(import.meta.env.VITE_FORM_API_URL, submitData);
+
+        if (response.data.success) {
+          setResult('Registration submitted successfully! We\'ll contact you soon.');
+          setFormData({ name: '', contact: '', email: '', profession: '', company: '' });
+          setHoneypot('');
+          formStartTime.current = Date.now();
+        } else {
+          setResult('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        setResult('Something went wrong. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      setErrors(newErrors);
     }
-    setErrors(newErrors);
   };
 
   const handleChange = (e) => {
@@ -213,13 +280,26 @@ const CareerFair = () => {
               <h3 className="text-2xl font-bold text-primary-dark">Join Our Career Fair</h3>
             </div>
             
-            {isSubmitted && (
-              <div className="bg-successcolor-100/10 border border-successcolor-100 text-successcolor-100 p-4 rounded-lg mb-6">
-                Registration submitted successfully! We'll contact you soon.
+            {result && (
+              <div className={`p-4 rounded-lg mb-6 ${result.includes('successfully') ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-700'}`}>
+                {result}
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot field - hidden from users */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                <input
+                  type="text"
+                  name={honeypotName.current}
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex="-1"
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+              </div>
+              <input type="hidden" name="botcheck" tabIndex="-1" autoComplete="off" />
               <div className="relative">
                 <User className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
                 <input
@@ -229,6 +309,8 @@ const CareerFair = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.name ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                  minLength="2"
+                  maxLength="100"
                 />
                 {errors.name && <p className="text-errorcolor-100 text-sm mt-1">{errors.name}</p>}
               </div>
@@ -288,9 +370,10 @@ const CareerFair = () => {
 
               <button
                 type="submit"
-                className="w-full bg-secondary-orange hover:bg-secondary-hover-100 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
+                disabled={isSubmitting}
+                className="w-full bg-secondary-orange hover:bg-secondary-hover-100 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
               >
-                Register as Professional
+                {isSubmitting ? 'Submitting...' : 'Register as Professional'}
               </button>
             </form>
           </div>

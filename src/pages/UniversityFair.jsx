@@ -1,6 +1,13 @@
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Globe, Target, Rocket, Quote, University, User, Phone, Mail, MapPin, Route } from 'lucide-react';
+import { 
+  sanitizeInput, 
+  checkRateLimit, 
+  checkFormTiming,
+  generateHoneypotName,
+  validateHoneypot
+} from '../utils/formSecurity';
 
 const UniversityFair = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +18,16 @@ const UniversityFair = () => {
     country: '',
     city: ''
   });
+  const [honeypot, setHoneypot] = useState('');
+  const honeypotName = useRef(generateHoneypotName());
+  const formStartTime = useRef(Date.now());
   const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState('');
+
+  useEffect(() => {
+    formStartTime.current = Date.now();
+  }, []);
 
   const validateForm = () => {
     const newErrors = {};
@@ -25,14 +40,65 @@ const UniversityFair = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({});
     const newErrors = validateForm();
+    
     if (Object.keys(newErrors).length === 0) {
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
+      // Rate limiting check
+      const rateLimit = checkRateLimit('university-fair', 3, 15);
+      if (!rateLimit.allowed) {
+        setResult(rateLimit.message);
+        return;
+      }
+
+      // Form timing check
+      const timingCheck = checkFormTiming(formStartTime.current, 5);
+      if (!timingCheck.allowed) {
+        setResult(timingCheck.message);
+        return;
+      }
+
+      // Honeypot validation
+      if (!validateHoneypot(honeypot)) {
+        setResult('Submission failed. Please try again.');
+        return;
+      }
+
+      setIsSubmitting(true);
+      setResult('');
+
+      try {
+        const formDataObj = new FormData(e.target);
+        formDataObj.append('access_key', import.meta.env.VITE_FORM_API);
+        formDataObj.append('subject', 'University Fair Registration');
+        formDataObj.append('botcheck', '');
+
+        const response = await fetch(import.meta.env.VITE_FORM_API_URL, {
+          method: 'POST',
+          body: formDataObj
+        });
+
+        const data = await response.json();
+        
+        if (data.success) {
+          setResult('Registration submitted successfully! We\'ll contact you soon.');
+          setFormData({ universityName: '', repName: '', contact: '', email: '', country: '', city: '' });
+          setHoneypot('');
+          formStartTime.current = Date.now();
+        } else {
+          const errorMsg = data.message || 'Something went wrong. Please try again.';
+          setResult(sanitizeInput(errorMsg));
+        }
+      } catch (error) {
+        setResult('Something went wrong. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      setErrors(newErrors);
     }
-    setErrors(newErrors);
   };
 
   const handleChange = (e) => {
@@ -144,13 +210,25 @@ const UniversityFair = () => {
             <h3 className="text-2xl font-bold text-primary-dark">Become a University Fair Participant</h3>
           </div>
           
-          {isSubmitted && (
-            <div className="bg-successcolor-100/10 border border-successcolor-100 text-successcolor-100 p-4 rounded-lg mb-6 animate-fade-in-up">
-              Registration submitted successfully! We'll contact you soon.
+          {result && (
+            <div className={`p-4 rounded-lg mb-6 ${result.includes('successfully') ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-700'}`}>
+              {result}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Honeypot field - hidden from users */}
+            <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+              <input
+                type="text"
+                name={honeypotName.current}
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+              />
+            </div>
             <div className="relative">
               <University className="absolute left-3 top-3.5 w-5 h-5 text-textcolor-200" />
               <input
@@ -160,6 +238,8 @@ const UniversityFair = () => {
                 value={formData.universityName}
                 onChange={handleChange}
                 className={`w-full pl-12 pr-3 py-3 border rounded-lg transition-all ${errors.universityName ? 'border-errorcolor-100' : 'border-bordercolor-100 focus:border-primary-medium'}`}
+                minLength="2"
+                maxLength="100"
               />
               {errors.universityName && <p className="text-errorcolor-100 text-sm mt-1">{errors.universityName}</p>}
             </div>
@@ -232,9 +312,10 @@ const UniversityFair = () => {
 
             <button
               type="submit"
-              className="w-full bg-secondary-orange hover:bg-secondary-hover-100 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
+              disabled={isSubmitting}
+              className="w-full bg-secondary-orange hover:bg-secondary-hover-100 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105"
             >
-              Register Now
+              {isSubmitting ? 'Submitting...' : 'Register Now'}
             </button>
           </form>
         </div>
