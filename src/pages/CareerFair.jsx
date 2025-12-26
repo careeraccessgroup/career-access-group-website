@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { updateMetaTags } from '../utils/seo'
-import { Users, Target, Lightbulb, Building2, Stethoscope, Briefcase, Palette, GraduationCap, User, Phone, Mail, MapPin } from 'lucide-react'
+import { Users, Target, Lightbulb, Building2, Stethoscope, Briefcase, Palette, GraduationCap, User, Phone, Mail, MapPin, X } from 'lucide-react'
 
 const CareerFair = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -149,39 +150,39 @@ const CareerFair = () => {
                 professionals: 'Doctors, engineers, scientists, architects, IT specialists, researchers, and innovators shaping the future through technology and science',
                 Icon: Stethoscope,
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop'
+                image: '/0V0A1644.jpg'
               },
               {
                 category: 'Government & Public Service',
                 professionals: 'Mayors, ministers, diplomats, military and police officers, policy makers, and civil servants working for national development',
                 Icon: Building2,
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=400&h=300&fit=crop'
+                image: '/0V0A1658.jpg'
               },
               {
                 category: 'Business & Entrepreneurship',
                 professionals: 'Company founders, CEOs, managers, economists, marketers, and financial experts driving economic growth',
                 Icon: Briefcase,
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+                image: '/0V0A1776.jpg'
               },
               {
                 category: 'Entertainment & Creative Industries',
                 professionals: 'Musicians, actors, filmmakers, fashion designers, content creators, and media professionals influencing culture and storytelling',
                 Icon: Palette,
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop'
+                image: '/0V0A1843.jpg'
               },
               {
                 category: 'Education & Social Impact',
                 professionals: 'Teachers, university lecturers, counselors, psychologists, NGO leaders, and community development specialists empowering others through knowledge and service',
                 Icon: GraduationCap,
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop'
+                image: '/0V0A1898.jpg'
               }
             ].map((category, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="h-45 overflow-hidden">
+              <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(category.image)}>
+                <div className="h-48 overflow-hidden">
                   <img 
                     src={category.image} 
                     alt={category.category}
@@ -309,7 +310,28 @@ const CareerFair = () => {
           </div>
         </div>
       </section> */}
+      {/* Image Modal */}
+    {selectedImage && (
+      <div className="fixed inset-0 bg-white/20 backdrop-blur-md flex items-center justify-center z-50" onClick={() => setSelectedImage(null)}>
+        <div className="relative max-w-4xl max-h-[90vh] p-4">
+          <button 
+            onClick={() => setSelectedImage(null)}
+            className="absolute -top-2 -right-2 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors z-10"
+          >
+            <X className="w-6 h-6 text-gray-600" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Full size" 
+            className="max-w-full max-h-full object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      </div>
+    )}
     </div>
+
+    
   )
 }
 

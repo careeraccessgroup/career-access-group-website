@@ -32,7 +32,7 @@ const Introduction = () => (
           </Link>
         </div>
         <div className="animate-fade-in-up-delay-1">
-          <img src="/001.jpg" alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
+          <img src="/0V0A1776.jpg" alt="Career Access Group Team" className="bg-linear-to-br from-gray-300 to-gray-400 rounded-2xl shadow-lg w-full" />
         </div>
       </div>
 

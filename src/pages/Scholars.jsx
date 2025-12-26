@@ -1,6 +1,8 @@
 import React from 'react';
-import { Globe, Users, ArrowRight } from 'lucide-react';
+import { Globe, Users, ArrowRight, X } from 'lucide-react';
+
 const Scholars = () => {
+  const [selectedImage, setSelectedImage] = React.useState(null);
   return (
     <div>
       {/* Hero Section */}
@@ -63,7 +65,7 @@ const Scholars = () => {
             </div>
             <div className="animate-fade-in-up-delay-1">
               <img 
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&h=400&fit=crop" 
+                src="/0V0A1958.jpg" 
                 alt="Students studying" 
                 className="w-full h-80 object-cover rounded-2xl shadow-lg"
               />
@@ -89,7 +91,7 @@ const Scholars = () => {
                   'Showcase your unique voice and experiences'
                 ],
                 color: 'bg-primary-medium',
-                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop'
+                image: '/0V0A1968.jpg'
               },
               {
                 title: 'Holistic Development',
@@ -99,7 +101,7 @@ const Scholars = () => {
                   'Mentorship from US university alumni'
                 ],
                 color: 'bg-secondary-orange',
-                image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop'
+                image: '/0V0A2004.jpg'
               },
               {
                 title: 'Competitive Edge',
@@ -109,10 +111,10 @@ const Scholars = () => {
                   'Position yourself as an irresistible candidate'
                 ],
                 color: 'bg-accent-teal',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+                image: '/0V0A2032.jpg'
               }
             ].map((experience, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up overflow-hidden" style={{animationDelay: `${index * 0.2}s`}}>
+              <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.2}s`}} onClick={() => setSelectedImage(experience.image)}>
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={experience.image} 
@@ -191,6 +193,26 @@ const Scholars = () => {
           </p>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-white/20 backdrop-blur-md flex items-center justify-center z-50" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] p-4">
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-2 -right-2 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Full size" 
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

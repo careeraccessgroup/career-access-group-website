@@ -31,7 +31,7 @@ const About = () => (
             </p>
           </div>
           <div>
-            <img src="/001.jpg" alt="Career Access Group Team" className="rounded-lg shadow-lg w-full" />
+            <img src="/9.jpeg" alt="Career Access Group Team" className="rounded-lg shadow-lg w-full" />
           </div>
         </div>
       </div>

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { updateMetaTags } from '../utils/seo'
-import { Heart, Wrench, Users, FileText, Search, Building2 } from 'lucide-react'
+import { Heart, Wrench, Users, FileText, Search, Building2, X } from 'lucide-react'
 
 const Clubs = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
   useEffect(() => {
     updateMetaTags({
       title: 'Clubs',
@@ -127,15 +128,15 @@ const Clubs = () => {
           <h2 className="text-2xl font-bold mb-8 text-textcolor-100 text-center animate-fade-in-up">Examples of Career Pathways</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { club: 'Robotics Club', careers: 'Engineering, Computer Science', image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop' },
-              { club: 'Debate Team', careers: 'Law, Politics, Consulting', image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop' },
-              { club: 'Environmental Club', careers: 'Sustainability, Environmental Science', image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop' },
-              { club: 'School Newspaper', careers: 'Journalism, Marketing, Communications', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop' },
-              { club: 'Volunteer Club', careers: 'Nonprofit Management, Social Work', image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=300&fit=crop' },
-              { club: 'Drama Club', careers: 'Theater, Arts Management, Entertainment', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop' }
+              { club: 'Robotics Club', careers: 'Engineering, Computer Science', image: '/0V0A1479.jpg' },
+              { club: 'Debate Team', careers: 'Law, Politics, Consulting', image: '/0V0A1486.jpg' },
+              { club: 'Environmental Club', careers: 'Sustainability, Environmental Science', image: '/0V0A1604.jpg' },
+              { club: 'School Newspaper', careers: 'Journalism, Marketing, Communications', image: '/0V0A1609.jpg' },
+              { club: 'Volunteer Club', careers: 'Nonprofit Management, Social Work', image: '/0V0A1619.jpg' },
+              { club: 'Drama Club', careers: 'Theater, Arts Management, Entertainment', image: '/0V0A1640.jpg' }
             ].map((pathway, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="h-42 overflow-hidden">
+              <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(pathway.image)}>
+                <div className="h-48 overflow-hidden">
                   <img 
                     src={pathway.image}
                     alt={pathway.club}
@@ -186,6 +187,26 @@ const Clubs = () => {
           </div> */}
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-white/20 backdrop-blur-md flex items-center justify-center z-50" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] p-4">
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-2 -right-2 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Full size" 
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
