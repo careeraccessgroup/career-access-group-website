@@ -58,7 +58,7 @@ export const initPerformanceMonitoring = () => {
   
   measureLCP()
   
-  // Monitor network connection
+  // Monitor network connections
   if ('connection' in navigator) {
     const connection = navigator.connection
     if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
