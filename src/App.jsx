@@ -5,11 +5,16 @@ import AppRoutes from './routes/AppRoutes'
 import ScrollToTop from './components/common/ScrollToTop'
 import { preloadCriticalImages } from './utils/imagePreloader'
 import { addStructuredData } from './utils/seo'
+import { initPerformanceMonitoring } from './utils/performance'
 
 function App() {
   useEffect(() => {
+    // Initialize performance monitoring
+    initPerformanceMonitoring()
+    
     // Preload critical images on app start
     preloadCriticalImages()
+    
     // Add structured data for SEO
     addStructuredData()
   }, [])

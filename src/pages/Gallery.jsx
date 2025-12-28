@@ -45,11 +45,12 @@ const Gallery = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map(img => (
+            {galleryImages.map((img, index) => (
               <div key={img.id} className="relative rounded-lg overflow-hidden shadow-lg group">
                 <OptimizedImage 
                   src={img.image} 
                   alt={img.title}
+                  priority={index < 6} // Priority load first 6 images
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-primary-dark bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

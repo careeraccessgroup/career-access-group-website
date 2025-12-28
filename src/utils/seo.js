@@ -39,7 +39,7 @@ export const pageMetadata = {
   home: {
     title: 'Empowering Africa\'s Next Generation',
     description: 'Bridging the gap between ambition and achievement across Africa. Join our Launch Pad program to revolutionize career education and empower youth.',
-    image: 'https://careeraccessgroup.com/0V0A1760.jpg'
+    image: 'https://careeraccessgroup.com/0V0A1604.jpg'
   },
   about: {
     title: 'About Us',

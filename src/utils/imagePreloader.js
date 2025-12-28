@@ -14,8 +14,10 @@ export const preloadImages = (imageSources) => {
 
 // Critical images that should be preloaded
 export const criticalImages = [
-  '/0V0A1760.jpg', // Hero background
-  '/logo.svg'      // Logo
+  '/0V0A1604.jpg', // Hero background (actual image used)
+  '/logo.svg',     // Logo
+  '/0V0A1479.jpg', // Gallery first image
+  '/0V0A1486.jpg'  // Gallery second image
 ]
 
 // Preload critical images on app start

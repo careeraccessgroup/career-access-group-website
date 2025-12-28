@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 const OptimizedImage = ({ 
   src, 
@@ -6,10 +6,34 @@ const OptimizedImage = ({
   className = '', 
   loading = 'lazy',
   decoding = 'async',
+  priority = false,
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
+  const [isInView, setIsInView] = useState(priority)
+  const imgRef = useRef(null)
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (priority || isInView) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '50px' }
+    )
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [priority, isInView])
 
   const handleLoad = () => {
     setIsLoaded(true)
@@ -28,21 +52,26 @@ const OptimizedImage = ({
   }
 
   return (
-    <div className="relative">
+    <div ref={imgRef} className="relative">
       {!isLoaded && (
-        <div className={`absolute inset-0 bg-gray-200 animate-pulse ${className}`} />
+        <div className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse ${className}`} />
       )}
-      <img
-        src={src}
-        alt={alt}
-        loading={loading}
-        decoding={decoding}
-        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-        onLoad={handleLoad}
-        onError={handleError}
-        style={{ contentVisibility: 'auto' }}
-        {...props}
-      />
+      {(isInView || priority) && (
+        <img
+          src={src}
+          alt={alt}
+          loading={priority ? 'eager' : loading}
+          decoding={decoding}
+          className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+          onLoad={handleLoad}
+          onError={handleError}
+          style={{ 
+            contentVisibility: 'auto',
+            containIntrinsicSize: '300px 200px'
+          }}
+          {...props}
+        />
+      )}
     </div>
   )
 }
