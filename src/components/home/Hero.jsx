@@ -58,7 +58,7 @@ const Hero = () => {
             </p>
             
             <div className="animate-fade-in-up-delay-4">
-              <Link to="/activities/the-launchpad">
+              <Link to="/curricula/the-launchpad">
                 <Button className="bg-secondary-orange hover:bg-secondary-hover-100 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 flex items-center gap-3 hover:scale-105 shadow-lg hover:shadow-xl">
                   Discover Our Curriculum
                   <span className="text-xl">→</span>

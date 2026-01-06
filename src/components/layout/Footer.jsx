@@ -4,13 +4,13 @@ import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => (
   <footer className="bg-primary-darker text-white">
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-6 py-12 ">
       <div className="grid md:grid-cols-4 gap-8">
         {/* Company Info */}
-        <div>
-          <div className="flex items-center gap-3 mb-4">
+        <div >
+          <div className="flex items-center gap-3 mb-4 ">
             <img src="/logo.svg" alt="Career Access Group Logo" className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 object-cover rounded-full drop-shadow-lg" />
-            <span className="text-xl sm:text-1xl font-bold">Career Access Group</span>
+            <span className="text-xl sm:text-1xl font-bold ">Career Access Group</span>
           </div>
           <p className="text-gray-300 mb-4 leading-relaxed text-base">
             We're transforming education across the continent by equipping young Africans with the tools, confidence, and guidance to forge meaningful career paths.
@@ -26,7 +26,7 @@ const Footer = () => (
         <div>
           <h3 className="text-accent-teal font-semibold mb-4">Quick Links</h3>
           <div className="space-y-3">
-            <Link to="/" className="block text-gray-300 hover:text-white">Home</Link>
+            <Link to="/" className="block text-gray-300 hover:text-white ">Home</Link>
             <Link to="/about" className="block text-gray-300 hover:text-white">About Us</Link>
             <Link to="/partnerships" className="block text-gray-300 hover:text-white">Partnership</Link>
             <Link to="/contact" className="block text-gray-300 hover:text-white">Contact</Link>
@@ -53,8 +53,8 @@ const Footer = () => (
           <h3 className="text-accent-teal font-semibold mb-4">Our Locations</h3>
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-secondary-orange" />
-              <span className="text-gray-300">Kigali, Rwanda</span>
+              <MapPin className="w-6 h-6 text-secondary-orange" />
+              <span className="text-gray-300 text-base">23 KN 4 AVE, ECD Plaza, 3rd Floor, Kigali, Rwanda</span>
             </div>
             {/* <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-secondary-orange" />

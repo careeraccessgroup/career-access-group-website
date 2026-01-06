@@ -5,21 +5,21 @@ const Testimony = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Career Access Group transformed my approach to job searching. Their personalized coaching helped me land my dream role in just 3 months!",
+      quote: "The career guidance sessions helped me discover my true passion and gave me a clear roadmap to achieve my goals. I now feel confident about my future!",
       name: "Sarah Johnson",
       role: "Student",
       avatar: "/0V0A1479.jpg"
     },
     {
       id: 2,
-      quote: "The resume optimization service was incredible. I started getting interview calls within weeks of updating my profile.",
+      quote: "Their mentorship program connected me with industry professionals who provided invaluable insights into my chosen field. It completely changed my perspective.",
       name: "Michael Chen",
       role: "Student",
       avatar: "/0V0A1486.jpg"
     },
     {
       id: 3,
-      quote: "Professional, knowledgeable, and genuinely invested in my success. I couldn't have made this career transition without their support.",
+      quote: "The skills assessment and career planning workshop helped me identify my strengths and build a strategic plan for my professional development.",
       name: "Emily Rodriguez",
       role: "Student",
       avatar: "/0V0A1604.jpg"
