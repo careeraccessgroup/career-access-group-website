@@ -61,7 +61,42 @@ async function compressImage(inputPath, outputPath) {
   }
 }
 
-async function compressImages() {
+async function compressImages(dir = PUBLIC_DIR, backupDir = null) {
+  if (!backupDir) {
+    backupDir = path.join(PUBLIC_DIR, 'original-images')
+  }
+
+  const files = fs.readdirSync(dir)
+
+  for (const file of files) {
+    const filePath = path.join(dir, file)
+    const stat = fs.statSync(filePath)
+
+    if (stat.isDirectory()) {
+      // Recursively process subdirectories
+      if (file !== 'original-images') {
+        await compressImages(filePath, backupDir)
+      }
+    } else if (/\.(jpg|jpeg|png)$/i.test(file) && !file.includes('compressed')) {
+      const backupPath = path.join(backupDir, path.relative(PUBLIC_DIR, filePath))
+      const backupPathDir = path.dirname(backupPath)
+
+      // Create backup directory structure
+      if (!fs.existsSync(backupPathDir)) {
+        fs.mkdirSync(backupPathDir, { recursive: true })
+      }
+
+      // Backup original
+      if (!fs.existsSync(backupPath)) {
+        fs.copyFileSync(filePath, backupPath)
+      }
+
+      await compressImage(filePath, filePath)
+    }
+  }
+}
+
+async function compressImagesOld() {
   console.log('🖼️  Starting image compression...\n')
   
   const files = fs.readdirSync(PUBLIC_DIR)
@@ -99,7 +134,11 @@ async function compressImages() {
 
 // Check if sharp is available and run compression
 try {
+  console.log('🖼️  Starting image compression...\n')
   await compressImages()
+  console.log('\n✅ Image compression complete!')
+  const backupDir = path.join(PUBLIC_DIR, 'original-images')
+  console.log(`📁 Original images backed up to: ${backupDir}`)
 } catch (error) {
   if (error.code === 'MODULE_NOT_FOUND') {
     console.log('📦 Sharp not found. Install it first:')
