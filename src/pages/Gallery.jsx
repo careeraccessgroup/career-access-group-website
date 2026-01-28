@@ -137,14 +137,14 @@ const Gallery = () => {
   return (
     <div>
       <section className="py-20 bg-primary-dark text-white text-center">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Our Gallery</h1>
           <p className="text-base sm:text-lg">Witness the Impact: Transforming Lives Through Education and Opportunity</p>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h1 className="text-2xl md:text-3xl font-bold mb-4 text-textcolor-100">
               {view.type === 'root' ? 'Photo Albums' : view.name}
