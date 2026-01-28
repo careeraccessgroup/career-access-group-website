@@ -5,10 +5,10 @@ import { X } from 'lucide-react'
 
 const galleryData = {
   'Career Day': {
-    thumbnail: '/CareerDay/CAREER WEEK /0V0A0001.jpg',
+    thumbnail: '/CareerDay/CAREER%20WEEK%20/0V0A0001.jpg',
     subfolders: {
       'Career Week Day 1': {
-        thumbnail: '/CareerDay/CAREER WEEK /0V0A0001.jpg',
+        thumbnail: '/CareerDay/CAREER%20WEEK%20/0V0A0001.jpg',
         images: [
           '0V0A0001.jpg', '0V0A0006.jpg', '0V0A0012.jpg', '0V0A0014.jpg', '0V0A0018.jpg',
           '0V0A0022.jpg', '0V0A0024.jpg', '0V0A0028.jpg', '0V0A0029.jpg', '0V0A0030.jpg',
@@ -16,37 +16,37 @@ const galleryData = {
           '0V0A0106-2 copy.jpg', '0V0A0107.jpg', '0V0A0114.jpg', '0V0A0123.jpg', '0V0A0140.jpg',
           '0V0A0151.jpg', '0V0A0153.jpg', '0V0A0155.jpg', '0V0A0190.jpg', '0V0A0192.jpg',
           '0V0A0194.jpg', '0V0A0197.jpg', '0V0A0202.jpg', '0V0A0207.jpg', '0V0A0213.jpg'
-        ].map(img => `/CareerDay/CAREER WEEK /${img}`)
+        ].map(img => `/CareerDay/CAREER%20WEEK%20/${img}`)
       },
       'Career Week Day 2': {
-        thumbnail: '/CareerDay/CAREER WEEK DAY 2/0V0A0220.jpg',
+        thumbnail: '/CareerDay/CAREER%20WEEK%20DAY%202/0V0A0220.jpg',
         images: [
           '0V0A0220.jpg', '0V0A0233.jpg', '0V0A0235.jpg', '0V0A0249.jpg', '0V0A0255.jpg',
           '0V0A0261.jpg', '0V0A0265.jpg', '0V0A0267.jpg', '0V0A0268.jpg', '0V0A0269.jpg',
           '0V0A0278.jpg', '0V0A0282.jpg', '0V0A0283.jpg', '0V0A0285.jpg', '0V0A0286.jpg',
           '0V0A0288.jpg', '0V0A0290.jpg', '0V0A0295.jpg', '0V0A0312.jpg', '0V0A0317.jpg',
           '0V0A0326.jpg', '0V0A0327.jpg', '0V0A0328.jpg', '0V0A0334.jpg', '0V0A0345.jpg'
-        ].map(img => `/CareerDay/CAREER WEEK DAY 2/${img}`)
+        ].map(img => `/CareerDay/CAREER%20WEEK%20DAY%202/${img}`)
       },
       'Career Day 3': {
-        thumbnail: '/CareerDay/CAREER DAY 3/0V0A0008.jpg',
+        thumbnail: '/CareerDay/CAREER%20DAY%203/0V0A0008.jpg',
         images: [
           '0V0A0008.jpg', '0V0A0013.jpg', '0V0A0023.jpg', '0V0A0028.jpg', '0V0A0037.jpg',
           '0V0A0052.jpg', '0V0A0053.jpg', '0V0A0056.jpg', '0V0A0068.jpg', '0V0A0092.jpg',
           '0V0A0094.jpg', '0V0A0098.jpg', '0V0A0104.jpg', '0V0A0118.jpg', '0V0A0141.jpg',
           '0V0A0142.jpg', '0V0A0152.jpg', '0V0A0157.jpg', '0V0A0158.jpg', '0V0A0159.jpg',
           '0V0A0173.jpg', '0V0A0174.jpg', '0V0A0178.jpg', '0V0A0187.jpg', '0V0A0198.jpg'
-        ].map(img => `/CareerDay/CAREER DAY 3/${img}`)
+        ].map(img => `/CareerDay/CAREER%20DAY%203/${img}`)
       },
       'Last Day': {
-        thumbnail: '/CareerDay/last day/ZAP_3898.jpg',
+        thumbnail: '/CareerDay/last%20day/ZAP_3898.jpg',
         images: [
           'ZAP_3898.jpg', 'ZAP_3922.jpg', 'ZAP_3937.jpg', 'ZAP_3947.jpg', 'ZAP_3951.jpg',
           'ZAP_3954.jpg', 'ZAP_3957.jpg', 'ZAP_3973.jpg', 'ZAP_3979.jpg', 'ZAP_3985.jpg',
           'ZAP_3992.jpg', 'ZAP_4007.jpg', 'ZAP_4011.jpg', 'ZAP_4012.jpg', 'ZAP_4014.jpg',
           'ZAP_4027.jpg', 'ZAP_4030.jpg', 'ZAP_4032.jpg', 'ZAP_4034.jpg', 'ZAP_4071.jpg',
           'ZAP_4076.jpg', 'ZAP_4077.jpg', 'ZAP_4082.jpg', 'ZAP_4091.jpg', 'ZAP_4098.jpg'
-        ].map(img => `/CareerDay/last day/${img}`)
+        ].map(img => `/CareerDay/last%20day/${img}`)
       }
     }
   },
