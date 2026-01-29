@@ -7,18 +7,18 @@ const galleryData = {
   'Career Day': {
     thumbnail: '/CareerDay/CAREER_WEEK/0V0A0001.jpg',
     subfolders: {
-      'Career Week Day 1': {
+      'Career Fair Week Day 1': {
         thumbnail: '/CareerDay/CAREER_WEEK/0V0A0001.jpg',
         images: [
           '0V0A0001.jpg', '0V0A0006.jpg', '0V0A0012.jpg', '0V0A0014.jpg', '0V0A0018.jpg',
-          '0V0A0022.jpg', '0V0A0024.jpg', '0V0A0028.jpg', '0V0A0029.jpg', '0V0A0030.jpg',
-          '0V0A0035.jpg', '0V0A0036.jpg', '0V0A0041.jpg', '0V0A0042.jpg', '0V0A0101.jpg',
+          '0V0A0022.jpg', '0V0A0024.jpg',   '0V0A0030.jpg',
+          '0V0A0035.jpg', '0V0A0036.jpg', '0V0A0041.jpg',  '0V0A0101.jpg',
           '0V0A0106-2 copy.jpg', '0V0A0107.jpg', '0V0A0114.jpg', '0V0A0123.jpg', '0V0A0140.jpg',
           '0V0A0151.jpg', '0V0A0153.jpg', '0V0A0155.jpg', '0V0A0190.jpg', '0V0A0192.jpg',
           '0V0A0194.jpg', '0V0A0197.jpg', '0V0A0202.jpg', '0V0A0207.jpg', '0V0A0213.jpg'
         ].map(img => `/CareerDay/CAREER_WEEK /${img}`)
       },
-      'Career Week Day 2': {
+      'Career Fair Week Day 2': {
         thumbnail: '/CareerDay/CAREER_WEEK_DAY_2/0V0A0220.jpg',
         images: [
           '0V0A0220.jpg', '0V0A0233.jpg', '0V0A0235.jpg', '0V0A0249.jpg', '0V0A0255.jpg',
@@ -28,7 +28,7 @@ const galleryData = {
           '0V0A0326.jpg', '0V0A0327.jpg', '0V0A0328.jpg', '0V0A0334.jpg', '0V0A0345.jpg'
         ].map(img => `/CareerDay/CAREER_WEEK_DAY_2/${img}`)
       },
-      'Career Day 3': {
+      'Career Fair Week Day 3': {
         thumbnail: '/CareerDay/CAREER_DAY_3/0V0A0008.jpg',
         images: [
           '0V0A0008.jpg', '0V0A0013.jpg', '0V0A0023.jpg', '0V0A0028.jpg', '0V0A0037.jpg',
@@ -38,7 +38,7 @@ const galleryData = {
           '0V0A0173.jpg', '0V0A0174.jpg', '0V0A0178.jpg', '0V0A0187.jpg', '0V0A0198.jpg'
         ].map(img => `/CareerDay/CAREER_DAY_3/${img}`)
       },
-      'Last Day': {
+      'Career Fair Week Last Day': {
         thumbnail: '/CareerDay/last_day/ZAP_3898.jpg',
         images: [
           'ZAP_3898.jpg', 'ZAP_3922.jpg', 'ZAP_3937.jpg', 'ZAP_3947.jpg', 'ZAP_3951.jpg',
