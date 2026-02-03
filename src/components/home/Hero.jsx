@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false)
-  const heroImage = '/CareerDay/CAREER_WEEK_DAY_2/0V0A0618.jpg'
+  const heroImage = '/CareerDay/last_day/ZAP_4585.jpg'
+  // 
 
   useEffect(() => {
     // Preload hero image

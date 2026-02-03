@@ -54,7 +54,7 @@ const OptimizedImage = ({
   return (
     <div ref={imgRef} className="relative">
       {!isLoaded && (
-        <div className={`absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse ${className}`} />
+        <div className={`absolute inset-0 bg-linear-to-br from-gray-200 to-gray-300 animate-pulse ${className}`} />
       )}
       {(isInView || priority) && (
         <img

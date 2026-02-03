@@ -217,43 +217,43 @@ const CareerFair = () => {
                 professionals: 'Doctors, engineers, scientists, architects, IT specialists, researchers, and innovators shaping the future through technology and science',
                 Icon: Stethoscope,
                 color: 'bg-accent-teal',
-                image: '/0V0A1644.jpg'
+                image: '/CareerDay/CAREER_WEEK /0V0A9991.jpg'
               },
               {
                 category: 'Government & Public Service',
                 professionals: 'Mayors, ministers, diplomats, military and police officers, policy makers, and civil servants working for national development',
                 Icon: Building2,
                 color: 'bg-accent-teal',
-                image: '/0V0A1658.jpg'
+                image: '/CareerDay/last_day/ZAP_3937.jpg'
               },
               {
                 category: 'Business & Entrepreneurship',
                 professionals: 'Company founders, CEOs, managers, economists, marketers, and financial experts driving economic growth',
                 Icon: Briefcase,
                 color: 'bg-accent-teal',
-                image: '/0V0A1776.jpg'
+                image: '/CareerDay/last_day/ZAP_3951.jpg'
               },
               {
                 category: 'Entertainment & Creative Industries',
                 professionals: 'Musicians, actors, filmmakers, fashion designers, content creators, and media professionals influencing culture and storytelling',
                 Icon: Palette,
                 color: 'bg-accent-teal',
-                image: '/0V0A1843.jpg'
+                image: '/CareerDay/last_day/ZAP_3954.jpg'
               },
               {
                 category: 'Education & Social Impact',
                 professionals: 'Teachers, university lecturers, counselors, psychologists, NGO leaders, and community development specialists empowering others through knowledge and service',
                 Icon: GraduationCap,
                 color: 'bg-accent-teal',
-                image: '/0V0A1898.jpg'
+                image: '/CareerDay/last_day/ZAP_3973.jpg'
               }
             ].map((category, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(category.image)}>
-                <div className="h-48 overflow-hidden">
+                <div className="h-52 overflow-hidden bg-gray-100 flex items-center justify-center">
                   <img 
                     src={category.image} 
                     alt={category.category}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <div className="p-5">
@@ -276,7 +276,7 @@ const CareerFair = () => {
         <div className="max-w-2xl mx-auto px-4 sm:px-6">
           <div className="bg-white shadow-lg rounded-lg p-8">
             <div className="flex items-center gap-3 mb-6 justify-center">
-              <Briefcase className="text-primary-medium w-8 h-8" />
+              <Briefcase className="text-primary-dark w-8 h-8" />
               <h3 className="text-2xl font-bold text-primary-dark">Join Our Career Fair</h3>
             </div>
             

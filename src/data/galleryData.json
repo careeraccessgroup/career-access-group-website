@@ -1,0 +1,96 @@
+{
+  "Career Day": {
+    "thumbnail": "/CareerDay/CAREER_WEEK /0V0A0001.jpg",
+    "subfolders": {
+      "Career Fair Week Day 1": {
+        "thumbnail": "/CareerDay/CAREER_WEEK /0V0A0001.jpg",
+        "basePath": "/CareerDay/CAREER_WEEK /",
+        "images": [
+          "0V0A0001.jpg", "0V0A0006.jpg", "0V0A0012.jpg", "0V0A0014.jpg", "0V0A0018.jpg",
+          "0V0A0022.jpg", "0V0A0024.jpg", "0V0A0028.jpg", "0V0A0029.jpg", "0V0A0030.jpg",
+          "0V0A0035.jpg", "0V0A0036.jpg", "0V0A0041.jpg", "0V0A0042.jpg", "0V0A0101.jpg",
+          "0V0A0106-2 copy.jpg", "0V0A0107.jpg", "0V0A0114.jpg", "0V0A0123.jpg", "0V0A0140.jpg",
+          "0V0A0151.jpg", "0V0A0153.jpg", "0V0A0155.jpg", "0V0A0190.jpg", "0V0A0192.jpg",
+          "0V0A0194.jpg", "0V0A0197.jpg", "0V0A0202.jpg", "0V0A0207.jpg", "0V0A0213.jpg",
+          "0V0A9851.jpg", "0V0A9858.jpg", "0V0A9864.jpg", "0V0A9882.jpg", "0V0A9893.jpg",
+          "0V0A9894.jpg", "0V0A9897.jpg", "0V0A9907.jpg", "0V0A9909.jpg", "0V0A9911.jpg",
+          "0V0A9919.jpg", "0V0A9928.jpg", "0V0A9931.jpg", "0V0A9932.jpg", "0V0A9941.jpg"
+        ]
+      },
+      "Career Fair Week Day 2": {
+        "thumbnail": "/CareerDay/CAREER_WEEK_DAY_2/0V0A0220.jpg",
+        "basePath": "/CareerDay/CAREER_WEEK_DAY_2/",
+        "images": [
+          "0V0A0220.jpg", "0V0A0233.jpg", "0V0A0235.jpg", "0V0A0249.jpg", "0V0A0255.jpg",
+          "0V0A0261.jpg", "0V0A0265.jpg", "0V0A0267.jpg", "0V0A0268.jpg", "0V0A0269.jpg",
+          "0V0A0270.jpg", "0V0A0271.jpg", "0V0A0278.jpg", "0V0A0282.jpg", "0V0A0283.jpg",
+          "0V0A0285.jpg", "0V0A0286.jpg", "0V0A0288.jpg", "0V0A0290.jpg", "0V0A0295.jpg",
+          "0V0A0312.jpg", "0V0A0317.jpg", "0V0A0326.jpg", "0V0A0327.jpg", "0V0A0328.jpg",
+          "0V0A0334.jpg", "0V0A0345.jpg", "0V0A0349.jpg", "0V0A0355.jpg", "0V0A0375.jpg",
+          "0V0A0377.jpg", "0V0A0379.jpg", "0V0A0380.jpg", "0V0A0382.jpg", "0V0A0396.jpg",
+          "0V0A0401.jpg", "0V0A0426.jpg", "0V0A0427.jpg", "0V0A0428.jpg", "0V0A0429.jpg",
+          "0V0A0435.jpg", "0V0A0437.jpg", "0V0A0439.jpg", "0V0A0444.jpg", "0V0A0458.jpg",
+          "0V0A0459.jpg", "0V0A0491.jpg", "0V0A0513.jpg", "0V0A0519.jpg", "0V0A0523.jpg",
+          "0V0A0528.jpg", "0V0A0536.jpg", "0V0A0544.jpg", "0V0A0545.jpg", "0V0A0548.jpg",
+          "0V0A0556.jpg", "0V0A0565.jpg", "0V0A0581.jpg", "0V0A0587.jpg", "0V0A0592.jpg",
+          "0V0A0593.jpg", "0V0A0598.jpg", "0V0A0601.jpg", "0V0A0602.jpg", "0V0A0604.jpg",
+          "0V0A0605.jpg", "0V0A0606.jpg", "0V0A0611.jpg", "0V0A0614.jpg", "0V0A0618.jpg",
+          "0V0A0622.jpg", "0V0A0633.jpg", "0V0A0638.jpg", "0V0A0641.jpg", "0V0A0642.jpg",
+          "0V0A0649.jpg", "0V0A0650.jpg"
+        ]
+      },
+      "Career Fair Week Day 3": {
+        "thumbnail": "/CareerDay/CAREER_DAY_3/0V0A0008.jpg",
+        "basePath": "/CareerDay/CAREER_DAY_3/",
+        "images": [
+          "0V0A0008.jpg", "0V0A0013.jpg", "0V0A0023.jpg", "0V0A0028.jpg", "0V0A0037.jpg",
+          "0V0A0052.jpg", "0V0A0053.jpg", "0V0A0056.jpg", "0V0A0068.jpg", "0V0A0092.jpg",
+          "0V0A0094.jpg", "0V0A0098.jpg", "0V0A0104.jpg", "0V0A0118.jpg", "0V0A0141.jpg",
+          "0V0A0142.jpg", "0V0A0152.jpg", "0V0A0157.jpg", "0V0A0158.jpg", "0V0A0159.jpg",
+          "0V0A0173.jpg", "0V0A0174.jpg", "0V0A0178.jpg", "0V0A0187.jpg", "0V0A0198.jpg",
+          "0V0A0202.jpg", "0V0A0205.jpg", "0V0A0210.jpg", "0V0A0223.jpg", "0V0A0237.jpg",
+          "0V0A0245.jpg", "0V0A0250.jpg", "0V0A0254.jpg", "0V0A0255.jpg", "0V0A0257.jpg",
+          "0V0A0267.jpg", "0V0A0286.jpg", "0V0A0287.jpg", "0V0A0294.jpg", "0V0A0311.jpg",
+          "0V0A0314.jpg", "0V0A0323.jpg", "0V0A0373.jpg", "0V0A0374.jpg", "0V0A0377.jpg",
+          "0V0A0390.jpg", "0V0A0393.jpg", "0V0A9840.jpg", "0V0A9854.jpg", "0V0A9855.jpg",
+          "0V0A9857.jpg", "0V0A9881.jpg", "0V0A9890.jpg", "0V0A9891.jpg"
+        ]
+      },
+      "Career Fair Week Last Day": {
+        "thumbnail": "/CareerDay/last_day/ZAP_3898.jpg",
+        "basePath": "/CareerDay/last_day/",
+        "images": [
+          "ZAP_3898.jpg", "ZAP_3922.jpg", "ZAP_3937.jpg", "ZAP_3947.jpg", "ZAP_3951.jpg",
+          "ZAP_3954.jpg", "ZAP_3957.jpg", "ZAP_3973.jpg", "ZAP_3979.jpg", "ZAP_3985.jpg",
+          "ZAP_3992.jpg", "ZAP_4007.jpg", "ZAP_4011.jpg", "ZAP_4012.jpg", "ZAP_4014.jpg",
+          "ZAP_4027.jpg", "ZAP_4030.jpg", "ZAP_4032.jpg", "ZAP_4034.jpg", "ZAP_4071.jpg",
+          "ZAP_4076.jpg", "ZAP_4077.jpg", "ZAP_4082.jpg", "ZAP_4091.jpg", "ZAP_4098.jpg",
+          "ZAP_4100.jpg", "ZAP_4106.jpg", "ZAP_4112.jpg", "ZAP_4117.jpg", "ZAP_4122.jpg",
+          "ZAP_4132.jpg", "ZAP_4136.jpg", "ZAP_4141.jpg", "ZAP_4155.jpg", "ZAP_4163.jpg",
+          "ZAP_4166.jpg", "ZAP_4167.jpg", "ZAP_4168.jpg", "ZAP_4171.jpg", "ZAP_4198.jpg",
+          "ZAP_4202.jpg", "ZAP_4203.jpg", "ZAP_4204.jpg", "ZAP_4213.jpg", "ZAP_4220.jpg",
+          "ZAP_4224.jpg", "ZAP_4225.jpg", "ZAP_4232.jpg", "ZAP_4237.jpg", "ZAP_4249.jpg",
+          "ZAP_4256.jpg", "ZAP_4296.jpg", "ZAP_4307.jpg", "ZAP_4309.jpg", "ZAP_4314.jpg",
+          "ZAP_4316.jpg", "ZAP_4327.jpg", "ZAP_4330.jpg", "ZAP_4334.jpg", "ZAP_4335.jpg",
+          "ZAP_4336.jpg", "ZAP_4339.jpg", "ZAP_4341.jpg", "ZAP_4345.jpg", "ZAP_4348.jpg",
+          "ZAP_4349.jpg", "ZAP_4351.jpg", "ZAP_4362.jpg", "ZAP_4365.jpg", "ZAP_4366.jpg",
+          "ZAP_4371.jpg", "ZAP_4374.jpg", "ZAP_4375.jpg", "ZAP_4376.jpg", "ZAP_4378.jpg",
+          "ZAP_4379.jpg", "ZAP_4394.jpg", "ZAP_4403.jpg", "ZAP_4449.jpg", "ZAP_4471.jpg",
+          "ZAP_4476.jpg", "ZAP_4487.jpg", "ZAP_4493.jpg", "ZAP_4496.jpg", "ZAP_4500.jpg",
+          "ZAP_4510.jpg", "ZAP_4513.jpg", "ZAP_4536.jpg", "ZAP_4549.jpg", "ZAP_4568.jpg",
+          "ZAP_4574.jpg", "ZAP_4577.jpg", "ZAP_4580.jpg", "ZAP_4585.jpg", "ZAP_4591.jpg",
+          "ZAP_4592.jpg"
+        ]
+      }
+    }
+  },
+  "Programs & Events": {
+    "thumbnail": "/0V0A1479.jpg",
+    "basePath": "/",
+    "images": [
+      "0V0A1479.jpg", "0V0A1486.jpg", "0V0A1604.jpg", "0V0A1609.jpg", "0V0A1619.jpg",
+      "0V0A1640.jpg", "0V0A1644.jpg", "0V0A1658.jpg", "0V0A1776.jpg", "0V0A1843.jpg",
+      "0V0A1898.jpg", "0V0A1958.jpg", "0V0A1968.jpg", "0V0A2004.jpg", "0V0A2032.jpg"
+    ]
+  }
+}
