@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false)
-  const heroImage = '/0V0A1604.jpg'
+  const heroImage = '/CareerDay/CAREER_WEEK_DAY_2/0V0A0618.jpg'
 
   useEffect(() => {
     // Preload hero image
@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         {/* Loading placeholder */}
         {!imageLoaded && (
-          <div className="w-full h-full bg-gradient-to-br from-primary-dark to-primary-light animate-pulse" />
+          <div className="w-full h-full bg-linear-to-br from-primary-dark to-primary-light animate-pulse" />
         )}
         
         {/* Optimized background image */}
