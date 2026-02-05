@@ -217,28 +217,28 @@ const CareerFair = () => {
                 professionals: 'Doctors, engineers, scientists, architects, IT specialists, researchers, and innovators shaping the future through technology and science',
                 Icon: Stethoscope,
                 color: 'bg-accent-teal',
-                image: '/CareerDay/CAREER_WEEK /0V0A9991.jpg'
+                image: '/CareerDay/CAREER_WEEK_DAY_2/0V0A0396.jpg'
               },
               {
                 category: 'Government & Public Service',
                 professionals: 'Mayors, ministers, diplomats, military and police officers, policy makers, and civil servants working for national development',
                 Icon: Building2,
                 color: 'bg-accent-teal',
-                image: '/CareerDay/last_day/ZAP_3937.jpg'
+                image: '/CareerDay/CAREER_WEEK /0V0A0151.jpg'
               },
               {
                 category: 'Business & Entrepreneurship',
                 professionals: 'Company founders, CEOs, managers, economists, marketers, and financial experts driving economic growth',
                 Icon: Briefcase,
                 color: 'bg-accent-teal',
-                image: '/CareerDay/last_day/ZAP_3951.jpg'
+                image: '/CareerDay/CAREER_DAY_3/0V0A0311.jpg'
               },
               {
                 category: 'Entertainment & Creative Industries',
                 professionals: 'Musicians, actors, filmmakers, fashion designers, content creators, and media professionals influencing culture and storytelling',
                 Icon: Palette,
                 color: 'bg-accent-teal',
-                image: '/CareerDay/last_day/ZAP_3954.jpg'
+                image: '/CareerDay/last_day/ZAP_4568.jpg'
               },
               {
                 category: 'Education & Social Impact',
@@ -249,11 +249,11 @@ const CareerFair = () => {
               }
             ].map((category, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(category.image)}>
-                <div className="h-52 overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="h-62 overflow-hidden bg-gray-100 flex items-center justify-center">
                   <img 
-                    src={category.image} 
+                    src={category.image}
                     alt={category.category}
-                    className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <div className="p-5">

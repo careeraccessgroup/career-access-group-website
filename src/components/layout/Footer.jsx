@@ -56,6 +56,11 @@ const Footer = () => (
               <MapPin className="w-6 h-6 text-secondary-orange" />
               <span className="text-gray-300 text-base">23 KN 4 AVE, ECD Plaza, 3rd Floor, Kigali, Rwanda</span>
             </div>
+            <div className="flex items-center gap-2">
+              <span id='iasBadge' data-account-id='7018'></span>
+              <script async defer crossorigin="anonymous" src="https://www-cdn.icef.com/scripts/iasbadgeid.js">
+              </script>
+            </div>
             {/* <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-secondary-orange" />
               <span className="text-gray-300">Nairobi, Kenya</span>
