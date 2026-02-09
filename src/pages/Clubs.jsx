@@ -129,11 +129,11 @@ const Clubs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { club: 'Robotics Club', careers: 'Engineering, Computer Science', image: '/0V0A1479.jpg' },
-              { club: 'Debate Team', careers: 'Law, Politics, Consulting', image: '/0V0A1486.jpg' },
+              { club: 'Debate Team', careers: 'Law, Politics, Consulting', image: '/CareerDay/CAREER_DAY_3/0V0A0267.jpg' },
               { club: 'Environmental Club', careers: 'Sustainability, Environmental Science', image: '/0V0A1604.jpg' },
-              { club: 'School Newspaper', careers: 'Journalism, Marketing, Communications', image: '/0V0A1609.jpg' },
+              { club: 'School Newspaper', careers: 'Journalism, Marketing, Communications', image: '/6.jpeg' },
               { club: 'Volunteer Club', careers: 'Nonprofit Management, Social Work', image: '/0V0A1619.jpg' },
-              { club: 'Drama Club', careers: 'Theater, Arts Management, Entertainment', image: '/0V0A1640.jpg' }
+              { club: 'Drama Club', careers: 'Theater, Arts Management, Entertainment', image: '/CareerDay/CAREER_WEEK_DAY_2/0V0A0220.jpg' }
             ].map((pathway, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(pathway.image)}>
                 <div className="h-48 overflow-hidden">

@@ -23,11 +23,11 @@ const CommunityService = () => {
 
       {/* Introduction */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2 animate-fade-in-up">
               <img 
-                src="/0V0A1640.jpg" 
+                src="/CareerDay/CAREER_WEEK /0V0A9882.jpg" 
                 alt="Community Service" 
                 className="w-full h-80 object-cover rounded-2xl shadow-lg"
               />

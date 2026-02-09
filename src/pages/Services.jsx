@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
-import { Award, Users, GraduationCap, Briefcase, Target, BookOpen, FileText, Globe, User, Phone, Mail, Building2 } from 'lucide-react';
+import { Award, Users, GraduationCap, Briefcase, Target, BookOpen, FileText, Globe, User, Phone, Mail, Building2, X } from 'lucide-react';
 
 const Services = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -107,7 +108,8 @@ const Services = () => {
                       'Guest Speaker Series: Real-world industry insights'
                     ],
                     Icon: Users,
-                    color: 'bg-primary-medium'
+                    color: 'bg-primary-medium',
+                    image: '/8.jpeg'
                   },
                   {
                     title: 'University Application Support',
@@ -117,7 +119,8 @@ const Services = () => {
                       'Securing Scholarships: CAG Application Platform access'
                     ],
                     Icon: FileText,
-                    color: 'bg-secondary-orange'
+                    color: 'bg-secondary-orange',
+                    image: '/0V0A1619.jpg'
                   },
                   {
                     title: 'Test & Visa Preparation',
@@ -126,7 +129,8 @@ const Services = () => {
                       'Entry Visa Guidance: Expert immigration support'
                     ],
                     Icon: Globe,
-                    color: 'bg-accent-teal'
+                    color: 'bg-accent-teal',
+                    image: '/visas.jpeg'
                   },
                   {
                     title: 'Profile Development',
@@ -135,7 +139,8 @@ const Services = () => {
                       'Community Service: Well-rounded profile building'
                     ],
                     Icon: Target,
-                    color: 'bg-accent-gold'
+                    color: 'bg-accent-gold',
+                    image: '/CareerDay/CAREER_WEEK /0V0A9894.jpg'
                   },
                   {
                     title: 'Institutional Collaboration',
@@ -145,24 +150,34 @@ const Services = () => {
                       
                     ],
                     Icon: Building2,
-                    color: 'bg-primary-dark'
+                    color: 'bg-primary-dark',
+                    image: '/0V0A2032.jpg'
                   }
                 ].map((service, index) => (
-                  <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-6" style={{animationDelay: `${index * 0.1}s`}}>
-                    <div className="flex items-center mb-4">
-                      <div className={`w-10 h-10 ${service.color} rounded-full flex items-center justify-center mr-3`}>
-                        <service.Icon className="w-5 h-5 text-white" />
-                      </div>
-                      <h3 className="text-lg font-bold text-primary-dark">{service.title}</h3>
+                  <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer" style={{animationDelay: `${index * 0.1}s`}} onClick={() => setSelectedImage(service.image)}>
+                    <div className="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                      <img 
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                      />
                     </div>
-                    <ul className="space-y-2">
-                      {service.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-textcolor-200">
-                          <span className="text-accent-teal mt-1">•</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="p-6">
+                      <div className="flex items-center mb-4">
+                        <div className={`w-10 h-10 ${service.color} rounded-full flex items-center justify-center mr-3`}>
+                          <service.Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold text-primary-dark">{service.title}</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {service.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-textcolor-200">
+                            <span className="text-accent-teal mt-1">•</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -221,6 +236,26 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-white/20 backdrop-blur-md flex items-center justify-center z-50" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-4xl max-h-[90vh] p-4">
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-2 -right-2 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-gray-600" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Full size" 
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Contact Form */}
       {/* <section className="py-16 bg-white">
